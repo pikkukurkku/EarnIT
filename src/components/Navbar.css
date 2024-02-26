@@ -1,0 +1,26 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fdfbf1;
+  color: #023047;
+  font-size: 20px;
+  font-family: Poppins;
+  font-weight: 400;
+  padding: 51px 690px 44px 72px;
+}
+
+.logo {
+  text-decoration: none;
+  align-items: center;
+  margin-right: 80px;
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 24px;
+  color: #023047;
+}
+
+.navbar p {
+  margin-right: 56px;
+  color: #023047;
+}

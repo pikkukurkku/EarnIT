@@ -1,0 +1,24 @@
+
+.headerDiv {
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+    color: #023047;
+    padding: 10px;
+    margin-left: 108px;
+    margin-top: 165px;
+    width: 504px;
+    height: 144px;
+    background-color: #FDFBF1;
+}
+
+.quizButton {
+    font-family: Poppins;
+    border-radius: 15px;
+    border: none;
+    background-color: #023047;
+    padding: 14px, 27px, 14px, 27px;
+    color: white; 
+}
+
