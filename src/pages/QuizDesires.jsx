@@ -136,9 +136,37 @@ function QuizDesires() {
             }}
           />
         </div>
+        <div className={styles["countries"]}>
+          <label>In which countries would you like to work?</label>
+          <select name="country" id="country">
+  <option value="germany">Germany</option>
+  <option value="austria">Austria</option>
+  <option value="switzerland">Switzerland</option>
+  <option value="luxemburg">Luxemburg</option>
+</select>
+        <button className={styles["add-more"]}>Add more</button>
+        </div>
+        <div className={styles["cities"]}>
+          <label>In which cities would you like to work?</label>
+          <select name="city" id="city">
+  <option value="No preferences">No preferences</option>
+  <option value="berlin">Berlin</option>
+  <option value="frankfurt">Frankfurt</option>
+  <option value="cologne">Cologne</option>
+  <option value="munich">Munich</option>
+  <option value="vienna">Vienna</option>
+  <option value="zurich">Zürich</option>
+</select>
+        <button className={styles["add-more"]} >Add more</button>
+        </div>
       </form>
       </div>
+      <div className={styles["right-side"]}>
       <img src="./woman-quiz-desire.png" alt="woman" className={styles["picture"]} />
+      <Link to="/quiz2">
+      <button className={styles["next-step"]}>Next step</button>
+      </Link>
+      </div>
     </div>
   );
 }

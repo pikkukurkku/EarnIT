@@ -23,7 +23,7 @@ function HomePage() {
     <div className="text">
       <h1 className="header">Make the best out of your career.</h1>
       <p>We will help with your personal and professional growth</p>
-      <Link to="/quiz">
+      <Link to="/quiz1">
       <button className="quizButton">Take the quiz</button>
       </Link>
       </div>

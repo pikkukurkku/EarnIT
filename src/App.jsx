@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 'import Footer from "./components/Footer";'
 import QuizDesires from "./pages/QuizDesires";
+import QuizCurrentCareer from "./pages/QuizCurrentCareer";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/quiz" element={<QuizDesires />} />
+        <Route path="/quiz1" element={<QuizDesires />} />
+        <Route path="/quiz2" element={<QuizCurrentCareer />} />
       </Routes>
     </>
   );
