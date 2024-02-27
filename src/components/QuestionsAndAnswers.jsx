@@ -1,13 +1,13 @@
-import "./QuestionsAndAnswers.css";
+import styles from "./QuestionsAndAnswers.module.css";
 
 function QuestionsAndAnswers() {
   return (
-    <div className="QuestionsAndAnswers">
+    <div className={styles["QuestionsAndAnswers"]}>
       <h3>Questions and answers</h3>
       <h4>
         Our users often have similar questions, so we answered some of them.
       </h4>
-      <div className="questions">
+      <div className={styles["questions"]}>
         <p>What happens next after I take the quiz?</p>
         <p>Do I need to pay for your services?</p>
         <p>What about my personal information?</p>

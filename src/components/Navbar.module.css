@@ -18,7 +18,7 @@
   color: #023047;
 }
 
-span {
+.navbar span {
   margin-right: 56px;
   color: #023047;
   font-size: 24px;
@@ -27,7 +27,7 @@ span {
     color: #023047;
 }
 
-p {
+.navbar p {
   font-size: 19px;
     font-weight: 400;
     font-family: Poppins;
