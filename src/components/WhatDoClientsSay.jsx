@@ -10,7 +10,7 @@ function WhatDoClientsSay() {
           <article>
           “EarnIT changed my life. I know which career steps to take now and where I want to go.”
           </article>
-          <img />
+          <img src="./user1.png" alt="AI-pic" />
           <p>Mike, Software Developer at Google</p>
         </div>
 
