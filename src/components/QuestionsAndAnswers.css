@@ -1,0 +1,21 @@
+.QuestionsAndAnswers {
+  background-color: #fdfbf1;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: #023047;
+}
+
+.questions {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 36px, 390px, 36px, 34px;
+    gap: 30px
+    
+}
+p {
+ 
+}

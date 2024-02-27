@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="logo">
-        <p>EarnIT</p>
+        <span>EarnIT</span>
       </Link>
         <p>Why choose us?</p>
         <p>What do clients say?</p>

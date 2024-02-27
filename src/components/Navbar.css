@@ -15,12 +15,21 @@
   align-items: center;
   margin-right: 80px;
   font-family: Poppins;
-  font-weight: 700;
-  font-size: 24px;
   color: #023047;
 }
 
-.navbar p {
+span {
   margin-right: 56px;
   color: #023047;
+  font-size: 24px;
+    font-weight: 700;
+    font-family: Poppins;
+    color: #023047;
+}
+
+p {
+  font-size: 19px;
+    font-weight: 400;
+    font-family: Poppins;
+    color: #023047;
 }
