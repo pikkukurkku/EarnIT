@@ -6,6 +6,22 @@ function QuizCurrentCareer() {
   const [employmentStatus, setEmploymentStatus] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [salaryInput, setSalaryInput] = useState("");
+  const [selectedGoals, setSelectedGoals] = useState([]);
+
+  const handleGoalChange = (e) => {
+    const goal = e.target.value;
+    if (selectedGoals.includes(goal)) {
+      setSelectedGoals(
+        selectedGoals.filter((selectedGoal) => selectedGoal !== goal)
+      );
+    } else {
+      setSelectedGoals([...selectedGoals, goal]);
+    }
+  };
+
+  const handleChangeAnswer = () => {
+    setSelectedGoals([]);
+  };
 
   const handleSalaryChange = (e) => {
     const inputValue = e.target.value;
@@ -26,11 +42,14 @@ function QuizCurrentCareer() {
  
 
   return (
+    
     <div className={styles["quiz-desires"]}>
-      <div className={styles["content"]}>
+      
         <Link to="/">
           <button className={styles["back-button"]}>Back</button>
         </Link>
+        <div className={styles["main-content"]}>
+        <div className={styles["content"]}>
         <h1 className={styles["header"]}>Current Job Situation</h1>
 
         <form className={styles["goals"]}>
@@ -69,7 +88,8 @@ function QuizCurrentCareer() {
           </div>
 
           <label>What is your current salary per year? (without extra bonuses)</label>
-          <textarea
+          <div className={styles["custom-input"]}>
+          <input type="text" className={styles["text-unit"]}
         value={salaryInput}
         onChange={handleSalaryChange}
         placeholder="e.g., 50,000, 60,000, 75,000"
@@ -79,17 +99,98 @@ function QuizCurrentCareer() {
      <div className={styles["separator"]}>
             <span className={styles["time-unit"]}>€</span>
           </div>
-
+          </div>
+          
+        <label>Do you have any additional work responsibilities?</label>
+        <div className={styles["answer-pillars"]}>
+          <input
+            type="text"
+            id="goal1"
+            name="goal1"
+            value="Leadership Role"
+            readOnly
+            onClick={handleGoalChange}
+            className={styles["answer"]}
+            style={{
+              backgroundColor: selectedGoals.includes("Leadership Role")
+                ? "#023047"
+                : "lightblue",
+              color: selectedGoals.includes("Leadership Role")
+                ? "white"
+                : "#023047",
+            }}
+          />
+          <input
+            type="text"
+            id="goal2"
+            name="goal2"
+            value="Stakeholder Communication"
+            readOnly
+            onClick={handleGoalChange}
+            className={styles["answer"]}
+            style={{
+              backgroundColor: selectedGoals.includes("Stakeholder Communication")
+                ? "#023047"
+                : "lightblue",
+              color: selectedGoals.includes("Stakeholder Communication")
+                ? "white"
+                : "#023047",
+            }}
+          />
+          <input
+            type="text"
+            id="goal3"
+            name="goal3"
+            value="Mentorship"
+            readOnly
+            onClick={handleGoalChange}
+            className={styles["answer"]}
+            style={{
+              backgroundColor: selectedGoals.includes("Mentorship")
+                ? "#023047"
+                : "lightblue",
+              color: selectedGoals.includes("Mentorship")
+                ? "white"
+                : "#023047",
+            }}
+          />
+        </div>
+        <input
+          type="text"
+          id="goal4"
+          name="goal4"
+          value="Add more"
+          readOnly
+          onClick={handleChangeAnswer}
+          className={styles["changeAnswer"]}
+          style={{ backgroundColor: "#8ECAE6" }}
+        />
         </form>
       </div>
       <div className={styles["right-side"]}>
         <img src="./current-career-man.png" alt="woman" className={styles["picture"]} />
-        <button className={styles["next-step"]} disabled={!employmentStatus}>
+
+      </div>
+      </div>
+    
+      <div className={styles["bottom-div"]}>
+      <Link to="/quiz1">
+      <button className={styles["step"]}>
+          Previous step
+        </button>
+        </Link>
+        <Link to="/quiz3">
+      <button className={styles["step"]}>
           Next step
         </button>
-      </div>
+        </Link>
+        </div>
     </div>
+  
    );
   }
   
   export default QuizCurrentCareer;
+
+
+  // <button className={styles["step"]} disabled={!employmentStatus}> update later
