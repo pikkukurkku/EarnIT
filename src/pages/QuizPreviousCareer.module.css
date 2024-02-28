@@ -13,13 +13,14 @@
 
 .main-content {
   display: flex;
+  
 }
 
 .goals {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 7px;
+  gap: 500px;
   color: #023047;
   font-family: Poppins;
 }
@@ -59,11 +60,15 @@
   align-items: flex-start;
   text-align: center;
   gap: 100px;
-  border-radius: 20px;
+  font-family: Poppins;
+  font-size: 16px;;
+  border-radius: 25px;
   border: 1px solid var(--Dark-Blue, #023047);
   background: var(--Light-Blue, #8ecae6);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: #023047;
+  margin-top: 20px;
+  width: 100px
 }
 
 .back-button {
@@ -104,6 +109,8 @@
   flex-direction: column;
   justify-content: space-between;
   padding-right: 20px;
+  margin-top: 20px;
+  
 }
 
 .step {
@@ -163,3 +170,19 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
+img {
+    margin-top: 50px;
+}
+
+
+.left, .right {
+    line-height: 3;
+}
+
+.job-title, .work-period {
+ font-family: Poppins;
+ font-size: 23px;
+ font-weight: 500;
+}
+

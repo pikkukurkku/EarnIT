@@ -3,43 +3,7 @@ import styles from "./QuizPreviousCareer.module.css";
 import { Link } from "react-router-dom";
 
 function QuizPreviousCareer() {
-  const [employmentStatus, setEmploymentStatus] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [salaryInput, setSalaryInput] = useState("");
-  const [selectedGoals, setSelectedGoals] = useState([]);
 
-  const handleGoalChange = (e) => {
-    const goal = e.target.value;
-    if (selectedGoals.includes(goal)) {
-      setSelectedGoals(
-        selectedGoals.filter((selectedGoal) => selectedGoal !== goal)
-      );
-    } else {
-      setSelectedGoals([...selectedGoals, goal]);
-    }
-  };
-
-  const handleChangeAnswer = () => {
-    setSelectedGoals([]);
-  };
-
-  const handleSalaryChange = (e) => {
-    const inputValue = e.target.value;
-
-    const regex = /^[\d,]*$/; 
-    if (regex.test(inputValue) || inputValue === "") {
-      setSalaryInput(inputValue);
-    }
-  }
-  const handleStatusChange = (value) => {
-    setEmploymentStatus(value);
-  };
-
-  const handleInputChange = (value) => {
-    setInputValue(value);
-  };
-
- 
 
   return (
     
@@ -53,19 +17,41 @@ function QuizPreviousCareer() {
         <h1 className={styles["header"]}>Previous Job Situation</h1>
 
         <form className={styles["goals"]}>
-          <label>Job Title</label>
+    <div className={styles["left"]}>
+          <label className={styles["job-title"]}>Job Title</label>
           <div className={styles["custom-input"]}>
           <input type="text" className={styles["text-unit"]}
-        value={salaryInput}
-        onChange={handleSalaryChange}
-        rows="1"
-        cols="50"
+      />
+      
+      </div>
+       <input
+          type="text"
+          id="goal4"
+          name="goal4"
+          value="Add more"
+          readOnly
+          className={styles["changeAnswer"]}
+          style={{ backgroundColor: "#8ECAE6" }}/>
+      </div>
+      <div className={styles["right"]}>
+          <label className={styles["work-period"]}>Work period</label><br/>
+          <span>From:</span>
+          <div className={styles["custom-input"]}>
+          <input type="date" className={styles["text-unit"]}
       />
       </div>
+      <span>To:</span>
+      <div className={styles["custom-input"]}>
+     
+          <input type="date" className={styles["text-unit"]} 
+      />
+     
 
-          <label>Work period</label>
-
+      </div>
+      <img src="./stars.png"/>
+      </div>
         </form>
+       
       </div>
       </div>
     
@@ -75,7 +61,7 @@ function QuizPreviousCareer() {
           Previous step
         </button>
         </Link>
-      <button className={styles["step"]} disabled={!employmentStatus}>
+      <button className={styles["step"]} >
           Next step
         </button>
         </div>
