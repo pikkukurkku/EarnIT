@@ -158,29 +158,68 @@
   
   }
   
-  select {
+  select, textarea {
       -webkit-appearance: none;
       -moz-appearance: none;
-      text-indent: 1px;
+      /* text-indent: 1px; */
       text-overflow: '';
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 2px solid #023047;
+      border-radius: 25px;
+      font-family: Poppins;
+  font-size: 16px;
     }
   
-  .add-more {
-      display: flex;
-      width: 122px;
-      padding: 10px 20px;
-      align-items: flex-start;
-      gap: 100px;
-      border-radius: 20px;
-  border: 1px solid var(--Dark-Blue, #023047);
-  background: var(--Light-Blue, #8ECAE6);
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-family: Poppins;
-  color: var(--Dark-Blue, #023047);
-  text-align: center;
+option {
   font-family: Poppins;
   font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+ 
+}
+
+
+  .radio-buttons {
+    display: flex;
+    gap: 10px;
   }
+  
+  .radio-option {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid #023047;
+    border-radius: 25px;
+  }
+  
+  .radio-option.selected {
+    background-color: #023047;
+    color: white;
+  }
+
+  .custom-input {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 1px;
+    box-sizing: border-box;
+  }
+  
+  input[type="number"] {
+    border: none;
+    outline: none;
+  
+    width: 50px;
+text-align: right;
+    font-size: 15px;
+  }
+  
+
+  
+  span {
+    padding: 8px; /* Add padding to space the text from the separator */
+  }
+
+  .time-unit {
+    width: 4rem;
+  }
+ 
