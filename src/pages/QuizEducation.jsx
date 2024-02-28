@@ -378,12 +378,12 @@ function QuizEducation() {
     </div>
 
         <div className={styles["bottom-div"]}>
-      <Link to="/quiz2">
+      <Link to="/quiz3">
       <button className={styles["step"]}>
           Previous step
         </button>
         </Link>
-        <Link to="/quiz4">
+        <Link to="/signup">
       <button className={styles["step"]} >
           Next step
         </button>
