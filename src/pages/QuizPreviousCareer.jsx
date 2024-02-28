@@ -14,6 +14,8 @@ function QuizPreviousCareer() {
         </Link>
         <div className={styles["main-content"]}>
         <div className={styles["content"]}>
+
+        
         <h1 className={styles["header"]}>Previous Job Situation</h1>
 
         <form className={styles["goals"]}>
@@ -61,9 +63,11 @@ function QuizPreviousCareer() {
           Previous step
         </button>
         </Link>
+        <Link to="/quiz4">
       <button className={styles["step"]} >
           Next step
         </button>
+        </Link>
         </div>
     </div>
   

@@ -217,7 +217,7 @@ text-align: right;
 
   
   span {
-    padding: 8px; /* Add padding to space the text from the separator */
+    padding: 8px; 
     margin-right: 20px
   }
 

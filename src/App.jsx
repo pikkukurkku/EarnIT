@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import QuizDesires from "./pages/QuizDesires";
 import QuizCurrentCareer from "./pages/QuizCurrentCareer";
 import QuizPreviousCareer from "./pages/QuizPreviousCareer";
+import QuizEducation from "./pages/QuizEducation";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/quiz1" element={<QuizDesires />} />
         <Route path="/quiz2" element={<QuizCurrentCareer />} />
         <Route path="/quiz3" element={<QuizPreviousCareer />} />
+        <Route path="/quiz4" element={<QuizEducation />} />
       </Routes>
     </>
   );
