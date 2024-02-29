@@ -1,30 +1,27 @@
 import { useState } from "react";
-import styles from "./SignUpPage.module.css";
+import styles from "./LogInPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
-function SignUpPage() {
+function LogInPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
 
 
 
-
-  const handleSignupSubmit = (e) => {
+  const handleLogInSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post(`${API_URL}/auth/signup`, { email, password, name })
+      .post(`${API_URL}/auth/login`, { email, password })
       .then((response) => {
         console.log("Response from backend =>", response);
         // navigate("/login");
@@ -42,25 +39,11 @@ function SignUpPage() {
         <button className={styles["back-button"]}>Back</button>
       </Link>
       <div className={styles["main-content"]}>
-        <img src="./login-woman.png" alt="happy woman" />
+        <img src="./stars.png" alt="happy woman" />
         <div className={styles["content"]}>
-          <h1 className={styles["header"]}>Almost done! Just one thing...</h1>
-          <p>Please create an account to save your results:</p>
-          <form onSubmit={handleSignupSubmit} className={styles["goals"]}>
+          <h1 className={styles["header"]}>Log in to your profile</h1>
+          <form onSubmit={handleLogInSubmit} className={styles["goals"]}>
             <div className={styles["left"]}>
-              <label htmlFor="name" className={styles["job-title"]}>
-                Name
-              </label>
-              <div className={styles["custom-input"]}>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={name}
-                  onChange={handleName}
-                  className={styles["text-unit"]}
-                />
-              </div>
               <label htmlFor="email" className={styles["job-title"]}>
                 Email
               </label>
@@ -92,9 +75,7 @@ function SignUpPage() {
               <button type="submit" className={styles["step"]}>
                 Sign up
               </button>
-              <p>
-                Already have an account?<Link to={"/login"}> Log in here</Link>
-              </p>
+              <Link to={"/login"}><button>Log in</button></Link>
             </div>
           </form>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
@@ -104,4 +85,4 @@ function SignUpPage() {
   );
 }
 
-export default SignUpPage;
+export default LogInPage;
