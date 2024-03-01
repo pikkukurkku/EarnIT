@@ -6,28 +6,24 @@ import axios from "axios";
 const API_URL = "http://localhost:5005";
 
 function SignUpPage() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const navigate = useNavigate();
-
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
   const handleName = (e) => setName(e.target.value);
-
-
-
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
 
     axios
-      .post(`${API_URL}/auth/signup`, { email, password, name })
+      .post(`${API_URL}/signup`, { name, email, password})
       .then((response) => {
         console.log("Response from backend =>", response);
-        // navigate("/login");
+        navigate("/login");
       })
       .catch((error) => {
         console.log(error);
@@ -97,6 +93,9 @@ function SignUpPage() {
               </p>
             </div>
           </form>
+          <Link to=".LoadingPage.jsx">
+          <button>NextPage</button>
+          </Link>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
       </div>

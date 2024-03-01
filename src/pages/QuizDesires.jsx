@@ -1,23 +1,65 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./QuizDesires.module.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function QuizDesires() {
-  const [selectedGoals, setSelectedGoals] = useState([]);
+  const navigate = useNavigate();
+  const [goals, setGoals] = useState([]);
+  const [careerPathOptions, setCareerPathOptions] = useState([]);
+  const [countries, setCountries] = useState([]);
+  const [cities, setCities] = useState([]);
 
   const handleGoalChange = (e) => {
     const goal = e.target.value;
-    if (selectedGoals.includes(goal)) {
-      setSelectedGoals(
-        selectedGoals.filter((selectedGoal) => selectedGoal !== goal)
-      );
+    if (goals.includes(goal)) {
+      setGoals(goals.filter((goal) => goal !== goal));
     } else {
-      setSelectedGoals([...selectedGoals, goal]);
+      setGoals([...goals, goal]);
     }
   };
 
-  const handleChangeAnswer = () => {
-    setSelectedGoals([]);
+  const handleCareerChange = (e) => {
+    const careerOption = e.target.value;
+    if (careerPathOptions.includes(careerOption)) {
+      setCareerPathOptions(
+        careerPathOptions.filter(
+          (careerOption) => careerOption !== careerOption
+        )
+      );
+    } else {
+      setCareerPathOptions([...careerPathOptions, careerOption]);
+    }
+  };
+
+  const handleCountryChange = (e) => {
+    const country = e.target.value;
+    setCountries([...countries, country]);
+  };
+
+  const handleCityChange = (e) => {
+    const city = e.target.value;
+    setCities([...cities, city]);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("http://localhost:5005/quizinput", {
+        goals,
+        careerPathOptions,
+        countries,
+        cities,
+      })
+      .then((response) => {
+        console.log("Response from backend =>", response);
+        navigate("/quiz2");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -28,7 +70,7 @@ function QuizDesires() {
         </Link>
         <h1 className={styles["header"]}>Desires</h1>
 
-        <form className={styles["goals"]}>
+        <form onSubmit={handleSubmit} className={styles["goals"]}>
           <label>What are your long-term goals? (pick 3)</label>
           <div className={styles["answer-pillars"]}>
             <input
@@ -40,10 +82,10 @@ function QuizDesires() {
               onClick={handleGoalChange}
               className={styles["answer"]}
               style={{
-                backgroundColor: selectedGoals.includes("Financial stability")
+                backgroundColor: goals.includes("Financial stability")
                   ? "#023047"
                   : "lightblue",
-                color: selectedGoals.includes("Financial stability")
+                color: goals.includes("Financial stability")
                   ? "white"
                   : "#023047",
               }}
@@ -57,12 +99,10 @@ function QuizDesires() {
               onClick={handleGoalChange}
               className={styles["answer"]}
               style={{
-                backgroundColor: selectedGoals.includes("Team Leadership")
+                backgroundColor: goals.includes("Team Leadership")
                   ? "#023047"
                   : "lightblue",
-                color: selectedGoals.includes("Team Leadership")
-                  ? "white"
-                  : "#023047",
+                color: goals.includes("Team Leadership") ? "white" : "#023047",
               }}
             />
             <input
@@ -74,10 +114,10 @@ function QuizDesires() {
               onClick={handleGoalChange}
               className={styles["answer"]}
               style={{
-                backgroundColor: selectedGoals.includes("More Responsibility")
+                backgroundColor: goals.includes("More Responsibility")
                   ? "#023047"
                   : "lightblue",
-                color: selectedGoals.includes("More Responsibility")
+                color: goals.includes("More Responsibility")
                   ? "white"
                   : "#023047",
               }}
@@ -89,7 +129,6 @@ function QuizDesires() {
             name="goal4"
             value="Change answer"
             readOnly
-            onClick={handleChangeAnswer}
             className={styles["changeAnswer"]}
             style={{ backgroundColor: "#8ECAE6" }}
           />
@@ -104,15 +143,15 @@ function QuizDesires() {
               name="goal1"
               value="I am very happy in my field of work"
               readOnly
-              onClick={handleGoalChange}
+              onClick={handleCareerChange}
               className={styles["answer"]}
               style={{
-                backgroundColor: selectedGoals.includes(
+                backgroundColor: careerPathOptions.includes(
                   "I am very happy in my field of work"
                 )
                   ? "#023047"
                   : "lightblue",
-                color: selectedGoals.includes(
+                color: careerPathOptions.includes(
                   "I am very happy in my field of work"
                 )
                   ? "white"
@@ -124,16 +163,15 @@ function QuizDesires() {
               id="goal2"
               name="goal2"
               value="I could see myself in a different job field"
-              readOnly
-              onClick={handleGoalChange}
+              onClick={handleCareerChange}
               className={styles["answer"]}
               style={{
-                backgroundColor: selectedGoals.includes(
+                backgroundColor: careerPathOptions.includes(
                   "I could see myself in a different job field"
                 )
                   ? "#023047"
                   : "lightblue",
-                color: selectedGoals.includes(
+                color: careerPathOptions.includes(
                   "I could see myself in a different job field"
                 )
                   ? "white"
@@ -143,7 +181,7 @@ function QuizDesires() {
           </div>
           <div className={styles["countries"]}>
             <label>In which countries would you like to work?</label>
-            <select name="country" id="country">
+            <select name="country" id="country" onChange={handleCountryChange}>
               <option value="germany">Germany</option>
               <option value="austria">Austria</option>
               <option value="switzerland">Switzerland</option>
@@ -153,7 +191,7 @@ function QuizDesires() {
           </div>
           <div className={styles["cities"]}>
             <label>In which cities would you like to work?</label>
-            <select name="city" id="city">
+            <select name="city" id="city" onChange={handleCityChange}>
               <option value="No preferences">No preferences</option>
               <option value="berlin">Berlin</option>
               <option value="frankfurt">Frankfurt</option>
@@ -172,9 +210,10 @@ function QuizDesires() {
           alt="woman"
           className={styles["picture"]}
         />
-        <Link to="/quiz2">
-          <button className={styles["next-step"]}>Next step</button>
-        </Link>
+
+        <button onClick={handleSubmit} className={styles["next-step"]}>
+          Next step
+        </button>
       </div>
     </div>
   );
