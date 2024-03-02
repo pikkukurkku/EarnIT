@@ -12,7 +12,7 @@ function QuizCurrentCareer() {
   const [employmentStatus, setEmploymentStatus] = useState("");
   const [years, setYears] = useState("");
   const [salary, setSalary] = useState("");
-  const [responsibilities, setResponsibilities] = useState([]);
+  const [responsibilities, setResponsibilities] = useState<string[]>([]);
 
   const handleCurrentJobTitleChange = (e) => {
     const selectedJobTitle = e.target.value;
