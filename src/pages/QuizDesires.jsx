@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "http://localhost:5005";
+
 function QuizDesires() {
   const navigate = useNavigate();
   const [goals, setGoals] = useState([]);
@@ -21,15 +23,15 @@ function QuizDesires() {
   };
 
   const handleCareerChange = (e) => {
-    const careerOption = e.target.value;
-    if (careerPathOptions.includes(careerOption)) {
+    const selectedCareerOption = e.target.value;
+    if (careerPathOptions.includes(selectedCareerOption)) {
       setCareerPathOptions(
         careerPathOptions.filter(
-          (careerOption) => careerOption !== careerOption
+          (careerOption) => careerOption !== selectedCareerOption
         )
       );
     } else {
-      setCareerPathOptions([...careerPathOptions, careerOption]);
+      setCareerPathOptions([...careerPathOptions, selectedCareerOption]);
     }
   };
 
@@ -45,20 +47,17 @@ function QuizDesires() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const requestBody = { goals, careerPathOptions, countries, cities };
 
     axios
-      .post("http://localhost:5005/quizinput", {
-        goals,
-        careerPathOptions,
-        countries,
-        cities,
-      })
+      .post(`${API_URL}/api/quizinput`, requestBody)
       .then((response) => {
         console.log("Response from backend =>", response);
         navigate("/quiz2");
       })
       .catch((error) => {
         console.log(error);
+        navigate("/quiz2");
       });
   };
 
@@ -139,11 +138,12 @@ function QuizDesires() {
           <div className={styles["answer-pillars2"]}>
             <input
               type="text"
-              id="goal1"
-              name="goal1"
-              value="I am very happy in my field of work"
+              id="careerOption1"
+              name="careerOption1"
+              defaultValue="I am very happy in my field of work"
               readOnly
               onClick={handleCareerChange}
+              onChange={() => {}}
               className={styles["answer"]}
               style={{
                 backgroundColor: careerPathOptions.includes(
@@ -160,10 +160,12 @@ function QuizDesires() {
             />
             <input
               type="text"
-              id="goal2"
-              name="goal2"
-              value="I could see myself in a different job field"
+              id="careerOption2"
+              name="careerOption2"
+              readOnly
+              defaultValue="I could see myself in a different job field"
               onClick={handleCareerChange}
+              onChange={() => {}}
               className={styles["answer"]}
               style={{
                 backgroundColor: careerPathOptions.includes(
