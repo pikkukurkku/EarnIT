@@ -1,45 +1,60 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./QuizCurrentCareer.module.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+const API_URL = "http://localhost:5005";
 
 function QuizCurrentCareer() {
+  const navigate = useNavigate();
+  const [jobTitle, setJobTitle] = useState ("")
   const [employmentStatus, setEmploymentStatus] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [salaryInput, setSalaryInput] = useState("");
-  const [selectedGoals, setSelectedGoals] = useState([]);
+  const [years, setYears] = useState("");
+  const [salary, setSalary] = useState("");
+  const [responsibilities, setResponsibilities] = useState([]);
 
-  const handleGoalChange = (e) => {
-    const goal = e.target.value;
-    if (selectedGoals.includes(goal)) {
-      setSelectedGoals(
-        selectedGoals.filter((selectedGoal) => selectedGoal !== goal)
-      );
-    } else {
-      setSelectedGoals([...selectedGoals, goal]);
-    }
-  };
-
-  const handleChangeAnswer = () => {
-    setSelectedGoals([]);
+  const handleCurrentJobTitleChange = (e) => {
+    const selectedJobTitle = e.target.value;
+    setJobTitle(selectedJobTitle);
   };
 
   const handleSalaryChange = (e) => {
-    const inputValue = e.target.value;
+    const newSalary = e.target.value;
+    setSalary(newSalary);
+  };
 
-    const regex = /^[\d,]*$/; 
-    if (regex.test(inputValue) || inputValue === "") {
-      setSalaryInput(inputValue);
-    }
-  }
   const handleStatusChange = (value) => {
     setEmploymentStatus(value);
   };
 
-  const handleInputChange = (value) => {
-    setInputValue(value);
+  const handleYearsChange = (value) => {
+    setYears(value);
   };
 
- 
+  const handleResponsibilitiesChange = (e) => {
+    const selectedResponsibility = e.target.value;
+    if (responsibilities.includes(selectedResponsibility)) {
+      setResponsibilities(responsibilities.filter((responsibility) => responsibility !== selectedResponsibility));
+    } else {
+      setResponsibilities([...responsibilities, selectedResponsibility]);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    console.log("Handling submit...");
+    e.preventDefault();
+    const requestBody = { jobTitle, employmentStatus, years, salary, responsibilities };
+
+    axios.put(`${API_URL}/api/quizinput`, requestBody)
+      .then((response) => {
+        console.log("Response from backend =>", response.data); 
+        navigate("/quiz3");
+      })
+      .catch((error) => {
+        console.error(error); 
+      });
+    }
 
   return (
     
@@ -52,9 +67,9 @@ function QuizCurrentCareer() {
         <div className={styles["content"]}>
         <h1 className={styles["header"]}>Current Job Situation</h1>
 
-        <form className={styles["goals"]}>
+        <form onSubmit={handleSubmit} className={styles["goals"]}>
           <label>What is your current job title?</label>
-          <select name="country" id="country">
+          <select name="currentJobTitle" id="currentJobTitle" onChange={handleCurrentJobTitleChange}>
             <option value="No preferences"></option>
             <option value="product">Product</option>
             <option value="product-manager">Product Manager</option>
@@ -82,15 +97,15 @@ function QuizCurrentCareer() {
 
           <label>How long have you been working in this position?</label>
           <div className={styles["custom-input"]}>
-            <input type="number" min="0" onChange={(e) => handleInputChange(e.target.value)} />
+            <input type="number" min="0" onChange={(e) => handleYearsChange(e.target.value)} />
             <div className={styles["separator"]} />
-            <span className={styles["time-unit"]}>{inputValue === "1" ? "year" : "years"}</span>
+            <span className={styles["time-unit"]}>{salary === "1" ? "year" : "years"}</span>
           </div>
 
           <label>What is your current salary per year? (without extra bonuses)</label>
           <div className={styles["custom-input"]}>
           <input type="text" className={styles["text-unit"]}
-        value={salaryInput}
+        value={salary}
         onChange={handleSalaryChange}
         placeholder="e.g., 50,000, 60,000, 75,000"
         rows="1"
@@ -109,13 +124,13 @@ function QuizCurrentCareer() {
             name="goal1"
             value="Leadership Role"
             readOnly
-            onClick={handleGoalChange}
+            onClick={handleResponsibilitiesChange}
             className={styles["answer"]}
             style={{
-              backgroundColor: selectedGoals.includes("Leadership Role")
+              backgroundColor: responsibilities.includes("Leadership Role")
                 ? "#023047"
                 : "lightblue",
-              color: selectedGoals.includes("Leadership Role")
+              color: responsibilities.includes("Leadership Role")
                 ? "white"
                 : "#023047",
             }}
@@ -126,13 +141,13 @@ function QuizCurrentCareer() {
             name="goal2"
             value="Stakeholder Communication"
             readOnly
-            onClick={handleGoalChange}
+            onClick={handleResponsibilitiesChange}
             className={styles["answer"]}
             style={{
-              backgroundColor: selectedGoals.includes("Stakeholder Communication")
+              backgroundColor: responsibilities.includes("Stakeholder Communication")
                 ? "#023047"
                 : "lightblue",
-              color: selectedGoals.includes("Stakeholder Communication")
+              color: responsibilities.includes("Stakeholder Communication")
                 ? "white"
                 : "#023047",
             }}
@@ -143,28 +158,18 @@ function QuizCurrentCareer() {
             name="goal3"
             value="Mentorship"
             readOnly
-            onClick={handleGoalChange}
+            onClick={handleResponsibilitiesChange}
             className={styles["answer"]}
             style={{
-              backgroundColor: selectedGoals.includes("Mentorship")
+              backgroundColor: responsibilities.includes("Mentorship")
                 ? "#023047"
                 : "lightblue",
-              color: selectedGoals.includes("Mentorship")
+              color: responsibilities.includes("Mentorship")
                 ? "white"
                 : "#023047",
             }}
           />
         </div>
-        <input
-          type="text"
-          id="goal4"
-          name="goal4"
-          value="Add more"
-          readOnly
-          onClick={handleChangeAnswer}
-          className={styles["changeAnswer"]}
-          style={{ backgroundColor: "#8ECAE6" }}
-        />
         </form>
       </div>
       <div className={styles["right-side"]}>
@@ -189,6 +194,7 @@ function QuizCurrentCareer() {
   
    );
   }
+
   
   export default QuizCurrentCareer;
 

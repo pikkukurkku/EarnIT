@@ -46,6 +46,7 @@ function QuizDesires() {
   };
 
   const handleSubmit = (e) => {
+    console.log("Handling submit...");
     e.preventDefault();
     const requestBody = { goals, careerPathOptions, countries, cities };
 
@@ -57,7 +58,7 @@ function QuizDesires() {
       })
       .catch((error) => {
         console.log(error);
-        navigate("/quiz2");
+        // navigate("/quiz2");
       });
   };
 
