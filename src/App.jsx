@@ -19,9 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/quiz1" element={<QuizDesires />} />
-        <Route path="/quiz2" element={<QuizCurrentCareer />} />
-        <Route path="/quiz3" element={<QuizPreviousCareer />} />
-        <Route path="/quiz4" element={<QuizEducation />} />
+        <Route path="/quiz2/:quizinputId" element={<QuizCurrentCareer />} />
+        <Route path="/quiz3/:quizinputId" element={<QuizPreviousCareer />} />
+        <Route path="/quiz4/:quizinputId" element={<QuizEducation />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LogInPage />} />
         <Route path="/loading" element={<LoadingPage />} />

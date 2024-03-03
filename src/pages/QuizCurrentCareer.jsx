@@ -2,17 +2,24 @@ import { useState } from "react";
 import styles from "./QuizCurrentCareer.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 
-function QuizCurrentCareer() {
+
+
+function QuizCurrentCareer(props) {
   const navigate = useNavigate();
-  const [jobTitle, setJobTitle] = useState ("")
+  const { quizinputId } = useParams();
+  console.log("quizinputId:", quizinputId);
+  const [jobTitle, setJobTitle] = useState("")
   const [employmentStatus, setEmploymentStatus] = useState("");
   const [years, setYears] = useState("");
   const [salary, setSalary] = useState("");
-  const [responsibilities, setResponsibilities] = useState<string[]>([]);
+  const [responsibilities, setResponsibilities] = useState([]);
+  
+
+
 
   const handleCurrentJobTitleChange = (e) => {
     const selectedJobTitle = e.target.value;
@@ -41,18 +48,22 @@ function QuizCurrentCareer() {
     }
   };
 
+
+
   const handleSubmit = (e) => {
     console.log("Handling submit...");
     e.preventDefault();
-    const requestBody = { jobTitle, employmentStatus, years, salary, responsibilities };
+    const updatedData = { jobTitle, employmentStatus, years, salary, responsibilities };
 
-    axios.put(`${API_URL}/api/quizinput`, requestBody)
+  
+    axios.put(`${API_URL}/api/quizinput/${quizinputId}/quiz2`, updatedData)
       .then((response) => {
         console.log("Response from backend =>", response.data); 
-        navigate("/quiz3");
+   
+        navigate(`/quiz3/${quizinputId}`);
       })
       .catch((error) => {
-        console.error(error); 
+        console.error("Error:", error); 
       });
     }
 
@@ -173,7 +184,7 @@ function QuizCurrentCareer() {
         </form>
       </div>
       <div className={styles["right-side"]}>
-        <img src="./current-career-man.png" alt="woman" className={styles["picture"]} />
+        <img src="../current-career-man.png" alt="career-man" className={styles["picture"]} />
 
       </div>
       </div>
@@ -184,11 +195,9 @@ function QuizCurrentCareer() {
           Previous step
         </button>
         </Link>
-        <Link to="/quiz3">
-      <button className={styles["step"]}>
+      <button onClick={handleSubmit} className={styles["step"]}>
           Next step
         </button>
-        </Link>
         </div>
     </div>
   

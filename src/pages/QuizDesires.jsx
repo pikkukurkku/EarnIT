@@ -54,11 +54,12 @@ function QuizDesires() {
       .post(`${API_URL}/api/quizinput`, requestBody)
       .then((response) => {
         console.log("Response from backend =>", response);
-        navigate("/quiz2");
+        const quizinputId = response.data._id; 
+        navigate(`/quiz2/${quizinputId}`);
       })
       .catch((error) => {
         console.log(error);
-        // navigate("/quiz2");
+  
       });
   };
 
@@ -217,6 +218,7 @@ function QuizDesires() {
         <button onClick={handleSubmit} className={styles["next-step"]}>
           Next step
         </button>
+  
       </div>
     </div>
   );

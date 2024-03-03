@@ -370,7 +370,7 @@ function QuizEducation() {
       <div className={styles["right-side"]}>
 
         <img
-          src="./picture-people.png"
+          src="../picture-people.png"
           alt="people"
           className={styles["picture"]}
         />
