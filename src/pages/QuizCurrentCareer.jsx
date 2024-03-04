@@ -11,7 +11,6 @@ const API_URL = "http://localhost:5005";
 function QuizCurrentCareer(props) {
   const navigate = useNavigate();
   const { quizinputId } = useParams();
-  console.log("quizinputId:", quizinputId);
   const [jobTitle, setJobTitle] = useState("")
   const [employmentStatus, setEmploymentStatus] = useState("");
   const [years, setYears] = useState("");
