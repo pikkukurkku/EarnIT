@@ -2,29 +2,36 @@ import { useState } from "react";
 import styles from "./LogInPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context/auth.context";
+import { useContext } from "react";
+import authService from "./../services/auth.service";
 
 const API_URL = "http://localhost:5005";
 
-function LogInPage() {
+function LogInPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const navigate = useNavigate();
 
+  const { storeToken, authenticateUser } = useContext(AuthContext);
+
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
 
-
   const handleLogInSubmit = (e) => {
     e.preventDefault();
+    const requestBody = { email, password };
 
-    axios
-      .post(`${API_URL}/auth/login`, { email, password })
+    authService
+      .login(requestBody)
       .then((response) => {
-        console.log("Response from backend =>", response);
-        // navigate("/login");
+        console.log("JWT token", response.data.authToken);
+        storeToken(response.data.authToken);
+        authenticateUser();
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -39,7 +46,7 @@ function LogInPage() {
         <button className={styles["back-button"]}>Back</button>
       </Link>
       <div className={styles["main-content"]}>
-        <img src="./stars.png" alt="happy woman" />
+        <img src="../stars.png" alt="happy woman" />
         <div className={styles["content"]}>
           <h1 className={styles["header"]}>Log in to your profile</h1>
           <form onSubmit={handleLogInSubmit} className={styles["goals"]}>

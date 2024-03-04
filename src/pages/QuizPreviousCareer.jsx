@@ -100,7 +100,7 @@ function QuizPreviousCareer(props) {
       </div>
     
       <div className={styles["bottom-div"]}>
-      <Link to="/quiz2/${quizinputId}">
+      <Link to={`/quiz2/${quizinputId}`}>
       <button className={styles["step"]}>
           Previous step
         </button>

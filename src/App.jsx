@@ -11,6 +11,9 @@ import SignUpPage from "./pages/SignUpPage";
 import LogInPage from "./pages/LogInPage";
 import LoadingPage from "./pages/LoadingPage";
 import ResultsPage from "./pages/ResultsPage";
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";
+
 
 function App() {
   return (
@@ -22,10 +25,10 @@ function App() {
         <Route path="/quiz2/:quizinputId" element={<QuizCurrentCareer />} />
         <Route path="/quiz3/:quizinputId" element={<QuizPreviousCareer />} />
         <Route path="/quiz4/:quizinputId" element={<QuizEducation />} />
-        <Route path="/signup/:quizinputId" element={<SignUpPage />} />
-        <Route path="/login/:quizinputId" element={<LogInPage />} />
-        <Route path="/loading/:quizinputId" element={<LoadingPage />} />
-        <Route path="/results/:quizinputId" element={<ResultsPage />} />
+        <Route path="/signup/:quizinputId" element={<IsAnon><SignUpPage /></IsAnon>} />
+        <Route path="/login/:quizinputId" element={<IsAnon><LogInPage /></IsAnon>} />
+        <Route path="/loading/:quizinputId" element={<IsPrivate><LoadingPage /></IsPrivate>} />
+        <Route path="/results/:quizinputId" element={<IsPrivate><ResultsPage /></IsPrivate>} />
       </Routes>
     </>
   );

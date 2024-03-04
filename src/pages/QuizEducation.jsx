@@ -439,11 +439,9 @@ function QuizEducation(props) {
         <Link to= {`/quiz3/${quizinputId}`}>
           <button className={styles["step"]}>Previous step</button>
         </Link>
-        <Link to="/signup">
           <button onClick={handleSubmit} className={styles["step"]}>
             Next step
           </button>
-        </Link>
       </div>
     </div>
   );

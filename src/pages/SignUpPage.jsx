@@ -86,7 +86,7 @@ function SignUpPage() {
                   className={styles["text-unit"]}
                 />
               </div>
-              <Link to="/loading/${quizinputId}"className={styles["step"]}>
+              <Link to="/login/${quizinputId}"className={styles["step"]}>
               <button type="submit" className={styles["step"]} >
                 Sign up
               </button>
