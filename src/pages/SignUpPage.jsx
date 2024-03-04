@@ -1,12 +1,13 @@
 import { useState } from "react";
 import styles from "./SignUpPage.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
 function SignUpPage() {
   const navigate = useNavigate();
+  const { quizinputId } = useParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -20,7 +21,7 @@ function SignUpPage() {
     e.preventDefault();
 
     axios
-      .post(`${API_URL}/signup`, { name, email, password})
+      .post(`${API_URL}/auth/signup/${quizinputId}`, { name, email, password })
       .then((response) => {
         console.log("Response from backend =>", response);
         navigate("/login");
@@ -38,7 +39,7 @@ function SignUpPage() {
         <button className={styles["back-button"]}>Back</button>
       </Link>
       <div className={styles["main-content"]}>
-        <img src="./login-woman.png" alt="happy woman" />
+        <img src="../login-woman.png" alt="happy woman" className={styles["picture"]} />
         <div className={styles["content"]}>
           <h1 className={styles["header"]}>Almost done! Just one thing...</h1>
           <p>Please create an account to save your results:</p>
@@ -85,18 +86,16 @@ function SignUpPage() {
                   className={styles["text-unit"]}
                 />
               </div>
-              <button type="submit" className={styles["step"]}>
+              <Link to="/loading/${quizinputId}"className={styles["step"]}>
+              <button type="submit" className={styles["step"]} >
                 Sign up
               </button>
+              </Link>
               <p>
-                Already have an account?<Link to={"/login"}> Log in here</Link>
+                Already have an account?<Link to={"/login/${quizinputId}"}> Log in here</Link>
               </p>
             </div>
           </form>
-          <Link to=".LoadingPage.jsx">
-          <button>NextPage</button>
-          </Link>
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
         </div>
       </div>
     </div>

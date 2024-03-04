@@ -92,7 +92,7 @@ function QuizEducation(props) {
       .put(`${API_URL}/api/quizinput/${quizinputId}/quiz4`, updatedData)
       .then((response) => {
         console.log("Response from backend =>", response.data);
-        navigate(`/signup/${quizinputId}`);
+        navigate(`/signup/${quizinputId}`)
       })
       .catch((error) => {
         console.error("Error:", error);

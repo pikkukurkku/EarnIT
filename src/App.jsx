@@ -22,10 +22,10 @@ function App() {
         <Route path="/quiz2/:quizinputId" element={<QuizCurrentCareer />} />
         <Route path="/quiz3/:quizinputId" element={<QuizPreviousCareer />} />
         <Route path="/quiz4/:quizinputId" element={<QuizEducation />} />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/login" element={<LogInPage />} />
-        <Route path="/loading" element={<LoadingPage />} />
-        <Route path="/results" element={<ResultsPage />} />
+        <Route path="/signup/:quizinputId" element={<SignUpPage />} />
+        <Route path="/login/:quizinputId" element={<LogInPage />} />
+        <Route path="/loading/:quizinputId" element={<LoadingPage />} />
+        <Route path="/results/:quizinputId" element={<ResultsPage />} />
       </Routes>
     </>
   );

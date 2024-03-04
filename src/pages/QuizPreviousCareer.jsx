@@ -12,8 +12,6 @@ const API_URL = "http://localhost:5005";
 function QuizPreviousCareer(props) {
   const navigate = useNavigate();
   const { quizinputId } = useParams();
-  console.log("quizinputId:", quizinputId);
-
   const [previousJobTitle, setPreviousJobTitle] = useState("")
   const [workPeriod, setWorkPeriod] = useState({ from: "", to: "" });
 

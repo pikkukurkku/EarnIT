@@ -7,7 +7,7 @@ function LoadingPage() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigate("/results");
+      navigate("/results/:quizinputId");
     }, 3000);
 
     return () => clearTimeout(timeout);
@@ -17,7 +17,7 @@ function LoadingPage() {
     <div className={styles["quiz-desires"]}>
       <h1>Your results are almost there!</h1>
       <p>We are preparing your results right now...</p>
-      <img src="./loading1.png" />
+      <img src="../loading1.png" />
     </div>
   );
 }
