@@ -7,7 +7,7 @@ function LoadingPage() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      navigate("/results/:quizinputId");
+      navigate("/results");
     }, 4000);
 
     return () => clearTimeout(timeout);

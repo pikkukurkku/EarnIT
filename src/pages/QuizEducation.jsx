@@ -17,15 +17,6 @@ function QuizEducation(props) {
   const [softSkills, setSoftSkills] = useState([]);
   const [hardSkills, setHardSkills] = useState([]);
 
- 
-    const renderDegreeOptions = () => {
-      const degrees = ["master", "bachelor", "doctorate"];
-      return degrees.map((degreeOption) => (
-        <option key={degreeOption} value={degreeOption} style={{ color: degree === degreeOption ? "blue" : "black" }}>
-          {degreeOption.charAt(0).toUpperCase() + degreeOption.slice(1)}
-        </option>
-      ));
-    };
 
     const handleDegreeChange = (e) => {
       const selectedDegree = e.target.value;
@@ -113,7 +104,6 @@ function QuizEducation(props) {
           <form onSubmit={handleSubmit} className={styles["goals"]}>
             <label>What is the highest degree you have?</label>
             <select onChange={handleDegreeChange} name="country" id="country">
-            {renderDegreeOptions()}
               <option value="master">Master's Degree</option>
               <option value="bachelor">Bachelor's Degree</option>
               <option value="doctorate">Doctorate</option>
@@ -124,8 +114,8 @@ function QuizEducation(props) {
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
-                id="goal1"
-                name="goal1"
+                id="subject1"
+                name="subject1"
                 value="Engineering"
                 readOnly
                 onClick={handleSubjectChange}
@@ -139,8 +129,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal2"
-                name="goal2"
+                id="subject2"
+                name="subject2"
                 value="Computer Science"
                 readOnly
                 onClick={handleSubjectChange}
@@ -156,8 +146,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal3"
-                name="goal3"
+                id="subject3"
+                name="subject3"
                 value="Data Analytics"
                 readOnly
                 onClick={handleSubjectChange}
@@ -174,20 +164,21 @@ function QuizEducation(props) {
             </div>
             <input
               type="text"
-              id="goal4"
-              name="goal4"
+              id="change1"
+              name="change1"
               value="Add more"
               readOnly
               // onClick={handleChangeAnswer}
               className={styles["add-more"]}
               style={{ backgroundColor: "#8ECAE6" }}
             />
+      
             <label>Which courses have you completed?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
-                id="goal1"
-                name="goal1"
+                id="course1"
+                name="course1"
                 value="Data Analytics Bootcamp"
                 readOnly
                 onClick={handleCoursesChange}
@@ -203,8 +194,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal2"
-                name="goal2"
+                id="course2"
+                name="course2"
                 value="IELSTS"
                 readOnly
                 onClick={handleCoursesChange}
@@ -219,8 +210,8 @@ function QuizEducation(props) {
             </div>
             <input
               type="text"
-              id="goal4"
-              name="goal4"
+              id="change2"
+              name="change2"
               value="Add more"
               readOnly
               // onClick={handleChangeAnswer}
@@ -232,8 +223,8 @@ function QuizEducation(props) {
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
-                id="goal1"
-                name="goal1"
+                id="language1"
+                name="language1"
                 value="German"
                 readOnly
                 onClick={handleLanguagesChange}
@@ -247,8 +238,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal2"
-                name="goal2"
+                id="language2"
+                name="language2"
                 value="English"
                 readOnly
                 onClick={handleLanguagesChange}
@@ -262,8 +253,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal3"
-                name="goal3"
+                id="language3"
+                name="language3"
                 value="Spanish"
                 readOnly
                 onClick={handleLanguagesChange}
@@ -276,23 +267,25 @@ function QuizEducation(props) {
                 }}
               />
             </div>
+
             <input
               type="text"
-              id="goal4"
-              name="goal4"
+              id="change3"
+              name="change3"
               value="Add more"
               readOnly
               // onClick={handleChangeAnswer}
               className={styles["add-more"]}
               style={{ backgroundColor: "#8ECAE6" }}
             />
+          
 
             <label>What are your soft skills?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
-                id="goal1"
-                name="goal1"
+                id="soft1"
+                name="soft1"
                 value="Teamwork"
                 readOnly
                 onClick={handleSoftSkillsChange}
@@ -306,8 +299,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal2"
-                name="goal2"
+                id="soft2"
+                name="soft2"
                 value="Communication"
                 readOnly
                 onClick={handleSoftSkillsChange}
@@ -323,8 +316,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal3"
-                name="goal3"
+                id="soft3"
+                name="soft3"
                 value="Conflict Resolution"
                 readOnly
                 onClick={handleSoftSkillsChange}
@@ -341,8 +334,8 @@ function QuizEducation(props) {
             </div>
             <input
               type="text"
-              id="goal4"
-              name="goal4"
+              id="change4"
+              name="change4"
               value="Add more"
               readOnly
               // onClick={handleChangeAnswer}
@@ -354,8 +347,8 @@ function QuizEducation(props) {
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
-                id="goal1"
-                name="goal1"
+                id="hard1"
+                name="hard1"
                 value="Python"
                 readOnly
                 onClick={handleHardSkillsChange}
@@ -369,8 +362,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal2"
-                name="goal2"
+                id="hard2"
+                name="hard2"
                 value="SQL"
                 readOnly
                 onClick={handleHardSkillsChange}
@@ -384,8 +377,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal3"
-                name="goal3"
+                id="hard3"
+                name="hard3"
                 value="Agile"
                 readOnly
                 onClick={handleHardSkillsChange}
@@ -399,8 +392,8 @@ function QuizEducation(props) {
               />
               <input
                 type="text"
-                id="goal4"
-                name="goal4"
+                id="hard4"
+                name="hard4"
                 value="CRM"
                 readOnly
                 onClick={handleHardSkillsChange}
@@ -415,8 +408,8 @@ function QuizEducation(props) {
             </div>
             <input
               type="text"
-              id="goal4"
-              name="goal4"
+              id="change5"
+              name="change5"
               value="Add more"
               readOnly
               // onClick={handleChangeAnswer}

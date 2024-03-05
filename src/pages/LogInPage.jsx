@@ -20,18 +20,15 @@ function LogInPage(props) {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-
   const handleLogInSubmit = (e) => {
     e.preventDefault();
     const requestBody = { email, password };
-
     authService
       .login(requestBody)
       .then((response) => {
-        console.log("JWT token", response.data.authToken);
+        console.log(response);
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
       })
       .catch((error) => {
         console.log(error);
@@ -80,9 +77,11 @@ function LogInPage(props) {
                 />
               </div>
               <button type="submit" className={styles["step"]}>
-                Sign up
+                Login
               </button>
-              <Link to={"/login"}><button>Log in</button></Link>
+              {/* <Link to={"/login"}>
+                <button>Log in</button>
+              </Link> */}
             </div>
           </form>
           {errorMessage && <p className="error-message">{errorMessage}</p>}
