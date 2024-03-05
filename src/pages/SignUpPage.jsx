@@ -25,7 +25,7 @@ function SignUpPage() {
       .signup(requestBody, quizinputId)
       .then((response) => {
         console.log(response);
-        return;
+        navigate("/login")
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;

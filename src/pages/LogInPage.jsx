@@ -29,6 +29,8 @@ function LogInPage(props) {
         console.log(response);
         storeToken(response.data.authToken);
         authenticateUser();
+        navigate("/loading");
+        
       })
       .catch((error) => {
         console.log(error);
@@ -79,9 +81,6 @@ function LogInPage(props) {
               <button type="submit" className={styles["step"]}>
                 Login
               </button>
-              {/* <Link to={"/login"}>
-                <button>Log in</button>
-              </Link> */}
             </div>
           </form>
           {errorMessage && <p className="error-message">{errorMessage}</p>}

@@ -19,13 +19,15 @@ class AuthService {
     });
   }
 
-  login = (requestBody) => {
-    return this.api.post("/auth/login", requestBody);
-  };
 
   signup = (requestBody, quizInputId) => {
     return this.api.post("/auth/signup/" + quizInputId, requestBody);
   };
+
+  login = (requestBody) => {
+    return this.api.post("/auth/login", requestBody);
+  };
+
 
   verify = () => {
     return this.api.get("/auth/verify");
