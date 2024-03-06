@@ -30,8 +30,8 @@ function Footer() {
       </div>
       <div className={styles["get-connected"]}>
       <h4>Get Connected</h4>
-      <img src='./insta.png'/>
-      <img src='./fb.png'/>
+      <img src='./insta.png' className={styles["footer-img"]}/>
+      <img src='./fb.png' className={styles["footer-img"]}/>
       </div>
       </div>
       <span>Privacy policy - Terms of use - Contact Us - GENERAL TERMS AND CONDITIONS - Legal notice - Sitemap</span>

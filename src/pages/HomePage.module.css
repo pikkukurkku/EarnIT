@@ -1,0 +1,60 @@
+.headerDiv {
+  font-family: Poppins;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 44px;
+  color: #023047;
+  padding-left: 160px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  height: auto;
+  background-color: #fdfbf1;
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.quizButton {
+  font-family: Poppins;
+  border-radius: 25px;
+  border: none;
+  background-color: #023047;
+  padding: 12px, 22px;
+  color: white;
+  width: 200px;
+  height: 47px;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.header {
+  font-size: 33px;
+  font-weight: 700;
+  width: 400px;
+}
+
+.wewillhelp {
+  font-size: 20px;
+  font-weight: 300;
+  width: 450px;
+}
+
+.earnIT {
+  width: 400px;
+  height: auto;
+  margin-top: 0;
+  padding: 0;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  margin-left: 140px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}

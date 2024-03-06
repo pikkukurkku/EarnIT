@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./HomePage.css"
+import styles from "./HomePage.module.css"
 import WhyChooseUs from "../components/WhyChooseUs";
 import WhatDoClientsSay from "../components/WhatDoClientsSay";
 import QuestionsAndAnswers from "../components/QuestionsAndAnswers";
@@ -19,16 +19,16 @@ function HomePage() {
   return (
     <>
     <Navbar />
-    <div className="headerDiv">
-    <div className="text">
-      <h1 className="header">Make the best out of your career.</h1>
-      <p>We will help with your personal and professional growth</p>
+    <div className={styles["headerDiv"]}>
+    <div className={styles["text"]}>
+      <h1 className={styles["header"]}>Make the best out of your career.</h1>
+      <p className={styles["wewillhelp"]}>We will help with your personal and professional growth</p>
       <Link to="/quiz1">
-      <button className="quizButton">Take the quiz</button>
+      <button className={styles["quizButton"]}>Take the quiz</button>
       </Link>
       </div>
-      <div className="imageContainer">
-      <img src="./earnIT.png" alt="earnIT" className="earnIT"/>
+      <div className={styles["imageContainer"]}>
+      <img src="./earnIT.png" alt="earnIT" className={styles["earnIT"]}/>
       </div>
     </div>
     <WhyChooseUs />
