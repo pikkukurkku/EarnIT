@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./QuizCurrentCareer.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -17,7 +17,9 @@ function QuizCurrentCareer(props) {
   const [salary, setSalary] = useState("");
   const [responsibilities, setResponsibilities] = useState([]);
   
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
   const handleCurrentJobTitleChange = (e) => {

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./QuizEducation.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -16,6 +16,11 @@ function QuizEducation(props) {
   const [languages, setLanguages] = useState([]);
   const [softSkills, setSoftSkills] = useState([]);
   const [hardSkills, setHardSkills] = useState([]);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
     const handleDegreeChange = (e) => {

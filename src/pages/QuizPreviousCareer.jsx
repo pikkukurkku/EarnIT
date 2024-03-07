@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./QuizPreviousCareer.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -15,6 +15,11 @@ function QuizPreviousCareer(props) {
   const [previousJobTitle, setPreviousJobTitle] = useState("")
   const [workPeriod, setWorkPeriod] = useState({ from: "", to: "" });
 
+
+ 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handlePreviousJobTitleChange = (e) => {
     const selectedPreviousJobTitle = e.target.value;
