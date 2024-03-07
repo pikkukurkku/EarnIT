@@ -36,7 +36,7 @@ function SignUpPage() {
   return (
     <div className={styles["quiz-desires"]}>
       <Link to="/">
-        <button className={styles["back-button"]}>Back</button>
+        <button className={styles["back-button"]}>Back to Homepage</button>
       </Link>
       <div className={styles["main-content"]}>
         <img
@@ -93,11 +93,13 @@ function SignUpPage() {
               <button type="submit" className={styles["step"]}>
                 Sign up
               </button>
-              <p>
+              <p className={styles["already-have"]}>
                 Already have an account?
-                <Link to={"/login"}> Log in here</Link>
+                <Link to="/login"> Log in here</Link>
               </p>
-              {errorMessage && errorMessage}
+              {errorMessage && (
+          <div className={styles["error-message"]}>{errorMessage}</div>
+        )}
             </div>
           </form>
         </div>

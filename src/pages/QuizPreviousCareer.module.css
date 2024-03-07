@@ -6,55 +6,37 @@
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   flex-shrink: 0;
-  margin: 50px;
+  margin: 40px;
   padding: 50px;
   font-family: Poppins;
 }
 
-.main-content {
-  display: flex;
-  
-}
 
 .goals {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   align-items: flex-start;
-  gap: 500px;
   color: #023047;
   font-family: Poppins;
+  font-size: 28px;
+}
+
+
+.job-title {
+  margin-bottom: 45px;
 }
 
 .header {
   text-decoration: none;
   color: #023047;
   font-family: Poppins;
+  font-size: 30px;
+  margin-bottom: 50px;
 }
 
-.answer-pillars {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  border-radius: 20px;
-  font-family: Poppins;
-}
 
-.answer {
-  display: flex;
-  padding: 10px 20px;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  gap: 100px;
-  border-radius: 20px;
-  color: white;
-  width: 100%;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  font-family: Poppins;
-}
-
-.changeAnswer {
+.addMore {
   display: flex;
   padding: 10px 20px;
   align-items: flex-start;
@@ -77,11 +59,6 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  display: inline-flex;
-  padding: 10px 20px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
   color: #023047;
   border-radius: 20px;
   border: 1px solid var(--Dark-Blue, #023047);
@@ -89,29 +66,6 @@
   margin-bottom: 5em;
 }
 
-.answer-pillars2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  box-sizing: border-box;
-  width: 24%;
-  font-family: Poppins;
-}
-
-.content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-right: 20px;
-  margin-top: 20px;
-  
-}
 
 .step {
   display: flex;
@@ -124,22 +78,16 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: #fff;
   font-family: Poppins;
-  font-size: 23px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
 
-.right-side {
-  display: flex;
-  flex-direction: column;
+.link {
+  text-decoration: none;
 }
 
-.countries,
-.cities {
-  display: flex;
-  flex-direction: column;
-}
 
 .custom-input {
   display: flex;
@@ -176,13 +124,24 @@ img {
 }
 
 
-.left, .right {
-    line-height: 3;
+.from, .to {
+  font-size: 18px;
 }
 
-.job-title, .work-period {
- font-family: Poppins;
- font-size: 23px;
- font-weight: 500;
+.to {
+  margin-left: 12px;
 }
 
+.right, .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.fromAndTo {
+  display: flex;
+  flex-direction: row;
+}
+
+.right {
+  margin-left: 140px;
+}

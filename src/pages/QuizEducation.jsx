@@ -73,8 +73,8 @@ function QuizEducation(props) {
   };
 
   const handleSubmit = (e) => {
-    console.log("Handling submit...");
     e.preventDefault();
+    console.log("Handling submit...");
     const updatedData = {
       degree,
       subjects,
@@ -99,7 +99,7 @@ function QuizEducation(props) {
   return (
     <div className={styles["quiz-desires"]}>
       <Link to="/">
-        <button className={styles["back-button"]}>Back</button>
+        <button className={styles["back-button"]}>Back to Homepage</button>
       </Link>
 
       <div className={styles["main-content"]}>
@@ -109,6 +109,7 @@ function QuizEducation(props) {
           <form onSubmit={handleSubmit} className={styles["goals"]}>
             <label>What is the highest degree you have?</label>
             <select onChange={handleDegreeChange} name="country" id="country">
+            <option value="none"></option>
               <option value="master">Master's Degree</option>
               <option value="bachelor">Bachelor's Degree</option>
               <option value="doctorate">Doctorate</option>
@@ -434,7 +435,7 @@ function QuizEducation(props) {
       </div>
 
       <div className={styles["bottom-div"]}>
-        <Link to= {`/quiz3/${quizinputId}`}>
+        <Link to= {`/quiz3/${quizinputId}`} className={styles["link"]}>
           <button className={styles["step"]}>Previous step</button>
         </Link>
           <button onClick={handleSubmit} className={styles["step"]}>

@@ -12,7 +12,9 @@ function Navbar() {
         <p>What do clients say?</p>
         <p>FAQ</p>
         </div>
+        <Link to="/login">
         <img src="../Profile Icon.png" alt="profile icon" className={styles["profile-icon"]}/>
+        </Link>
     </nav>
   );
 }
