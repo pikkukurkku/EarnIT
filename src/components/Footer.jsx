@@ -28,7 +28,11 @@ function Footer() {
       <p>Meetups</p>
       <p>Fairs</p>
       </div>
+      <div className={styles["get-connected"]}>
       <h4>Get Connected</h4>
+      <img src='./insta.png'/>
+      <img src='./fb.png'/>
+      </div>
       </div>
       <span>Privacy policy - Terms of use - Contact Us - GENERAL TERMS AND CONDITIONS - Legal notice - Sitemap</span>
     </div>
