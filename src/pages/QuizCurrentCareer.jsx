@@ -36,8 +36,9 @@ function QuizCurrentCareer(props) {
     setEmploymentStatus(value);
   };
 
-  const handleYearsChange = (value) => {
-    setYears(value);
+  const handleYearsChange = (e) => {
+    const value = e.target.value;
+    setYears(prevState => value);
   };
 
   const handleResponsibilitiesChange = (e) => {
@@ -57,6 +58,8 @@ function QuizCurrentCareer(props) {
     const updatedData = { jobTitle, employmentStatus, years, salary, responsibilities };
 
   
+    console.log("Updated Data:", updatedData);
+
     axios.put(`${API_URL}/api/quizinput/${quizinputId}/quiz2`, updatedData)
       .then((response) => {
         console.log("Response from backend =>", response.data); 
@@ -73,7 +76,7 @@ function QuizCurrentCareer(props) {
     <div className={styles["quiz-desires"]}>
       
         <Link to="/">
-          <button className={styles["back-button"]}>Back</button>
+          <button className={styles["back-button"]}>Back to Homepage</button>
         </Link>
         <div className={styles["main-content"]}>
         <div className={styles["content"]}>
@@ -81,7 +84,7 @@ function QuizCurrentCareer(props) {
 
         <form onSubmit={handleSubmit} className={styles["goals"]}>
           <label>What is your current job title?</label>
-          <select name="currentJobTitle" id="currentJobTitle" onChange={handleCurrentJobTitleChange}>
+          <select name="currentJobTitle" id="currentJobTitle" onChange={handleCurrentJobTitleChange} >
             <option value="No preferences"></option>
             <option value="product">Product</option>
             <option value="product-manager">Product Manager</option>
@@ -109,9 +112,17 @@ function QuizCurrentCareer(props) {
 
           <label>How long have you been working in this position?</label>
           <div className={styles["custom-input"]}>
-            <input type="number" min="0" onChange={(e) => handleYearsChange(e.target.value)} />
+          <select name="years" id="years" onChange={handleYearsChange} className={styles["select"]} >
+            <option value="0"></option>
+            <option value="1">1</option>
+            <option value="1">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">>5</option>
+            <option value="6">>10</option>
+          </select>
             <div className={styles["separator"]} />
-            <span className={styles["time-unit"]}>{salary === "1" ? "year" : "years"}</span>
+            <span className={styles["time-unit"]}>{years === "1" ? "year" : "years"}</span>
           </div>
 
           <label>What is your current salary per year? (without extra bonuses)</label>
@@ -137,7 +148,7 @@ function QuizCurrentCareer(props) {
             value="Leadership Role"
             readOnly
             onClick={handleResponsibilitiesChange}
-            className={styles["answer"]}
+            className={styles["answer2"]}
             style={{
               backgroundColor: responsibilities.includes("Leadership Role")
                 ? "#023047"
@@ -154,7 +165,7 @@ function QuizCurrentCareer(props) {
             value="Stakeholder Communication"
             readOnly
             onClick={handleResponsibilitiesChange}
-            className={styles["answer"]}
+            className={styles["answer2"]}
             style={{
               backgroundColor: responsibilities.includes("Stakeholder Communication")
                 ? "#023047"
@@ -171,7 +182,7 @@ function QuizCurrentCareer(props) {
             value="Mentorship"
             readOnly
             onClick={handleResponsibilitiesChange}
-            className={styles["answer"]}
+            className={styles["answer2"]}
             style={{
               backgroundColor: responsibilities.includes("Mentorship")
                 ? "#023047"
@@ -191,7 +202,7 @@ function QuizCurrentCareer(props) {
       </div>
     
       <div className={styles["bottom-div"]}>
-      <Link to="/quiz1">
+      <Link to="/quiz1" className={styles["link"]}>
       <button className={styles["step"]}>
           Previous step
         </button>

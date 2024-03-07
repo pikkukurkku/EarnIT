@@ -39,6 +39,9 @@
   width: auto;
   border: 1px solid var(--Dark-Blue, #023047);
   font-family: Poppins;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-bottom: 25px
 }
 
 .answer2 {
@@ -53,7 +56,8 @@
   width: auto;
   border: 1px solid var(--Dark-Blue, #023047);
   font-family: Poppins;
-  min-width: 290px;
+  min-width: 300px;
+  font-size: 15px;
 }
 
 .back-button {
@@ -76,7 +80,6 @@
   align-items: center;
   gap: 10px;
   border-radius: 20px;
-  font-size: 16px;
   width: auto;
 }
 
@@ -87,7 +90,8 @@
   height: auto;
   flex-shrink: 0;
   align-self: center;
-  margin-top: 200px;
+  margin-top: 180px;
+  margin-bottom: 180px;
 }
 
 .content {
@@ -96,6 +100,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding-right: 20px;
+  margin-bottom: 100px;
 }
 
 .next-step {
@@ -109,13 +114,13 @@
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   color: #fff;
   font-family: Poppins;
-  font-size: 23px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   position: absolute;
   bottom: 10px;
-  right: 10px;
+  right: 60px;
 }
 
 .right-side {
@@ -128,6 +133,7 @@
 .cities {
   display: flex;
   flex-direction: column;
+  margin-top: 25px;
 }
 
 .countries > select,
@@ -144,9 +150,8 @@
   background: #fff;
   display: flex;
   width: 200px;
-  padding: 10px 20px;
   align-items: flex-start;
-  gap: 100px;
+  margin-top: 8px;
 }
 
 select {
@@ -155,4 +160,3 @@ select {
   text-indent: 1px;
   text-overflow: "";
 }
-

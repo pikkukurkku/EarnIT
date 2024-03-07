@@ -72,7 +72,7 @@ function QuizDesires() {
         <Link to="/">
           <button className={styles["back-button"]}>Back to homepage</button>
         </Link>
-        <h1 className={styles["header"]}>Desires</h1>
+        <h1 className={styles["header"]}>Career goals</h1>
 
         <form onSubmit={handleSubmit} className={styles["goals"]}>
           <label>What are your long-term goals? (pick 3)</label>
