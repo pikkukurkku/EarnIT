@@ -11,7 +11,7 @@ function Navbar() {
         <p>Guides</p>
         <p>Networking</p>
         <p>Events</p>
-        <img src="./Profile Icon.png" />
+        <img src="./Profile Icon.png" alt="profile icon" className={styles["profile-icon"]}  />
     </nav>
   );
 }

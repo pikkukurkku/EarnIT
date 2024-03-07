@@ -5,19 +5,43 @@
   padding: 0;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  
 }
 
 .footer h4 {
-  color:white;
-  font-size: 32px
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .footer p {
-  color:white;
-  font-size: 19px
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .footer-boxes {
+  display: flex;
+  flex-direction: row;
+  padding: 40px 150px 50px 60px;
+  justify-content: space-between;
+  line-height: 1.2;
+}
+
+.footer-img {
+  width: 38px;
+  margin: 0;
+  padding: 15px
+}
+
+.footer span {
+ font-size: 11px;
+ align-self: center;
+ margin-bottom: 25px;
+}
+
+.get-connected-pics {
   display: flex;
   flex-direction: row;
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./SignUpPage.module.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import authService from "./../services/auth.service";
 
 const API_URL = "http://localhost:5005";
 
@@ -19,15 +20,14 @@ function SignUpPage() {
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .post(`${API_URL}/auth/signup/${quizinputId}`, { name, email, password })
+    const requestBody = { email, password, name };
+    authService
+      .signup(requestBody, quizinputId)
       .then((response) => {
-        console.log("Response from backend =>", response);
-        navigate("/login");
+        console.log(response);
+        navigate("/login")
       })
       .catch((error) => {
-        console.log(error);
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
@@ -39,7 +39,11 @@ function SignUpPage() {
         <button className={styles["back-button"]}>Back</button>
       </Link>
       <div className={styles["main-content"]}>
-        <img src="../login-woman.png" alt="happy woman" className={styles["picture"]} />
+        <img
+          src="../login-woman.png"
+          alt="happy woman"
+          className={styles["picture"]}
+        />
         <div className={styles["content"]}>
           <h1 className={styles["header"]}>Almost done! Just one thing...</h1>
           <p>Please create an account to save your results:</p>
@@ -86,14 +90,14 @@ function SignUpPage() {
                   className={styles["text-unit"]}
                 />
               </div>
-              <Link to="/login/${quizinputId}"className={styles["step"]}>
-              <button type="submit" className={styles["step"]} >
+              <button type="submit" className={styles["step"]}>
                 Sign up
               </button>
-              </Link>
               <p>
-                Already have an account?<Link to={"/login/${quizinputId}"}> Log in here</Link>
+                Already have an account?
+                <Link to={"/login"}> Log in here</Link>
               </p>
+              {errorMessage && errorMessage}
             </div>
           </form>
         </div>
