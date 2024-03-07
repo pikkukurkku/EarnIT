@@ -8,12 +8,42 @@
 }
 
 .questions {
-    display: flex;
-    flex-direction: column;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 36px, 390px, 36px, 34px;
-    gap: 30px
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid #023047;
+  border-radius: 25px;
+  width: 83%;
+  padding: 12px;
 }
 
+.header-QA {
+  font-family: Poppins;
+  font-size: 28px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.short-intro2 {
+  font-size: 20px;
+  font-family: Poppins;
+  font-weight: 300;
+  margin-top: 15px;
+  margin-bottom: 35px;
+}
+
+.question-paragraph {
+  font-size: 18px;
+  padding: 0 25px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+
+.arrow {
+  width: 20px;
+  margin: 0 0 0 15px;
+  padding: 0;
+  display: flex;
+  align-self: center;
+}

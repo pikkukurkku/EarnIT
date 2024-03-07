@@ -16,7 +16,7 @@
   align-content: center;
   justify-content: center;
   gap: 38px;
-  margin: 100px;
+  margin: 30px 100px 50px
 }
 
 .box {
@@ -31,7 +31,7 @@
 }
 
 .whyh5 {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: bold;
   padding: 5px
 }
@@ -44,9 +44,10 @@
 
 .header-whyChooseUs {
   font-family: Poppins;
-  font-size: 33px;
+  font-size: 28px;
   padding: 0;
-  margin: 10px 0;
+  margin-bottom: 3px;
+ 
 }
 
 .short-intro {

@@ -23,7 +23,7 @@
   align-content: center;
   justify-content: center;
   gap: 38px;
-  margin: 70px;
+  margin: 30px 100px 50px
 }
 
 .box {
@@ -40,13 +40,15 @@
 .what5 {
   font-size: 28px;
   font-weight: bold;
-  padding: 5px
+  padding: 0;
+  margin-bottom: 3px;
 }
 
 .what-article {
   font-size: 18px;
   font-weight: 500;
   padding: 40px 25px 10px;
+  text-align: left;
 }
 
 .what-whyChooseUs {
@@ -61,6 +63,7 @@
   font-size: 16px;
   font-family: Poppins;
   font-weight: 300;
+  text-align: left;
 } 
 
 .pic-div {

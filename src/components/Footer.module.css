@@ -12,24 +12,36 @@
 .footer h4 {
   color: white;
   font-size: 18px;
+  font-weight: 500;
 }
 
 .footer p {
   color: white;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .footer-boxes {
   display: flex;
   flex-direction: row;
-  padding-left: 50px;
+  padding: 40px 150px 50px 60px;
   justify-content: space-between;
+  line-height: 1.2;
 }
 
 .footer-img {
-  width: 40px;
+  width: 38px;
+  margin: 0;
+  padding: 15px
 }
 
 .footer span {
- font-size: 12px;
+ font-size: 11px;
+ align-self: center;
+ margin-bottom: 25px;
+}
+
+.get-connected-pics {
+  display: flex;
+  flex-direction: row;
 }

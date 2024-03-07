@@ -12,7 +12,7 @@ function ReadyToShine() {
      </Link>
      <img src="../stars.png" className={styles["star-img"]} />
      </div>
-     <p>Make your next big step in your career journey</p>
+     <p className={styles["next-big-step"]}>Make your next big step in your career journey</p>
     </div>
   );
 }
