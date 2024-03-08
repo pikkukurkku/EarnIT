@@ -8,7 +8,6 @@
   font-size: 18px;
   font-family: Poppins;
   font-weight: 400;
-  width: 90%;
   padding: 50px 0 9px 60px;
 }
 
@@ -44,13 +43,10 @@
 }
 
 .profile-icon {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-self: center;
   width: 40px;
   margin: 0;
-  padding-left: 0;
+  padding-right: 60px;
+  align-self: center;
 }
 
 .logout-btn {
@@ -59,13 +55,20 @@
   border: none;
   background-color: #023047;
   color: white;
-  height: 38px;
-  font-size: 18px;
-  font-weight: bold;
-  width: 100px;
+  font-weight: 500;
+  width: auto;
   margin-left: 110px;
+  padding: 5px 12px;
+  font-size: 13px;
 }
 
 .hey {
   margin-left: 60px;
+}
+
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 5px
 }

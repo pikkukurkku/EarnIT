@@ -5,6 +5,8 @@ import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  console.log("Logged-in User:", user);
+  const userId = user && user._id; 
   return (
     <nav className={styles["navbar"]}>
     <div className={styles["navbar-main"]}>
@@ -18,9 +20,8 @@ function Navbar() {
 
         {isLoggedIn ? (
   <>
-      
           <span className={styles["hey"]}>Hey, {user && user.name}!</span>
-          <Link to="/results">
+          <Link to="/results/user" >
         <img src="./Profile Icon.png" alt="profile icon" className={styles["profile-icon"]}  />
         </Link>
         <button onClick={logOutUser} className={styles["logout-btn"]}>Logout</button>

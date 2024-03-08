@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "./LoadingPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -9,7 +9,7 @@ function LoadingPage() {
   useEffect(() => {
       window.scrollTo(0, 0);
     const timeout = setTimeout(() => {
-      navigate("/results");
+      navigate("/results/user");
     }, 6000);
 
     return () => clearTimeout(timeout);

@@ -28,9 +28,12 @@ class AuthService {
     return this.api.post("/auth/login", requestBody);
   };
 
-
   verify = () => {
     return this.api.get("/auth/verify");
+  };
+
+  deleteUser = () => {
+    return this.api.delete("auth/user");
   };
 }
 

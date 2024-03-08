@@ -46,7 +46,7 @@ function LogInPage(props) {
   return (
     <div className={styles["quiz-desires"]}>
       <Link to="/">
-        <button className={styles["back-button"]}>Back</button>
+        <button className={styles["back-button"]}>Back to Homepage</button>
       </Link>
       <div className={styles["main-content"]}>
         <img src="../stars.png" alt="stars" className={styles["picture"]}/>
@@ -64,7 +64,7 @@ function LogInPage(props) {
                   id="email"
                   value={email}
                   onChange={handleEmail}
-                  autoComplete="off"
+                  autoComplete="on"
                   className={styles["text-unit"]}
                 />
               </div>
