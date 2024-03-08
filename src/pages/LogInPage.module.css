@@ -69,9 +69,11 @@
   
   
   .picture {
-    width: 160px;
+    width: 150px;
+    height: 140px;
     flex-shrink: 0;
-    margin-right: 160px;
+    margin-right: 120px;
+    margin-left: 120px;
     }
   
   .content {

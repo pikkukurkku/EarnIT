@@ -8,8 +8,7 @@
   font-size: 18px;
   font-family: Poppins;
   font-weight: 400;
-padding-left: 50px;
-
+padding: 50px 0 9px 60px
 }
 
 .logo {
@@ -51,5 +50,23 @@ padding-left: 50px;
   align-self: center;
 width: 42px;
 margin-top: 0;
-margin-right: 40px
+margin-right: 40px;
 }
+
+.logout-btn {
+    font-family: Poppins;
+    border-radius: 20px;
+    border: none;
+    background-color: #023047;
+    color: white;
+    height: 38px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100px;
+    margin-right: 80px;
+  }
+
+
+  .hey {
+    margin-left: 220px;
+  }
