@@ -24,9 +24,9 @@
 .footer-boxes {
   display: flex;
   flex-direction: row;
-  padding: 40px 150px 50px 60px;
+  padding: 35px 150px 50px 60px;
   justify-content: space-between;
-  line-height: 1.2;
+  line-height: 1.8;
 }
 
 .footer-img {

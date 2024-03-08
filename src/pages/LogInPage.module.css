@@ -28,6 +28,7 @@
   .header {
     color: #023047;
     font-family: Poppins;
+    font-size: 30px;
   }
   
   .answer-pillars {
@@ -68,9 +69,9 @@
   
   
   .picture {
-    width: 400px;
-    height: 250px;
+    width: 160px;
     flex-shrink: 0;
+    margin-right: 160px;
     }
   
   .content {
@@ -147,7 +148,7 @@
   
     .step {
       display: flex;
-      padding: 10px 20px;
+      padding: 10px 25px;
       justify-content: center;
       align-items: center;
       gap: 10px;
@@ -160,6 +161,7 @@
       font-style: normal;
       font-weight: 700;
       line-height: normal;
+      margin-top: 20px;
     }
   
     .right-side {
@@ -168,8 +170,9 @@
   align-items: center;
     }
   
-  img {
-    width: 40%;
-    height: auto;
-    padding: 50px
+
+  .error-message {
+    color: red;
+    margin-top: 20px;
+    font-weight: 600;
   }

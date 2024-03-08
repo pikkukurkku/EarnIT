@@ -6,6 +6,7 @@ function LoadingPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+      window.scrollTo(0, 0);
     const timeout = setTimeout(() => {
       navigate("/results");
     }, 4000);

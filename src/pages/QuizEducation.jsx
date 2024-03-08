@@ -107,14 +107,14 @@ function QuizEducation(props) {
           <h1 className={styles["header"]}>Education</h1>
 
           <form onSubmit={handleSubmit} className={styles["goals"]}>
-            <label>What is the highest degree you have?</label>
+            <label className={styles["label-education"]}>What is the highest degree you have?</label>
             <select onChange={handleDegreeChange} name="country" id="country">
             <option value="none"></option>
               <option value="master">Master's Degree</option>
               <option value="bachelor">Bachelor's Degree</option>
               <option value="doctorate">Doctorate</option>
             </select>
-            <label>
+            <label className={styles["label-education"]}>
               Which subjects have you studied? (You can choose several options)
             </label>
             <div className={styles["answer-pillars"]}>
@@ -179,7 +179,7 @@ function QuizEducation(props) {
               style={{ backgroundColor: "#8ECAE6" }}
             />
       
-            <label>Which courses have you completed?</label>
+            <label className={styles["label-education"]}>Which courses have you completed?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -225,7 +225,7 @@ function QuizEducation(props) {
               style={{ backgroundColor: "#8ECAE6" }}
             />
 
-            <label>Which languages do you speak?</label>
+            <label className={styles["label-education"]}>Which languages do you speak?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -286,7 +286,7 @@ function QuizEducation(props) {
             />
           
 
-            <label>What are your soft skills?</label>
+            <label className={styles["label-education"]}>What are your soft skills?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -349,7 +349,7 @@ function QuizEducation(props) {
               style={{ backgroundColor: "#8ECAE6" }}
             />
 
-            <label>What are your hard skills?</label>
+            <label className={styles["label-education"]}>What are your hard skills?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -429,7 +429,7 @@ function QuizEducation(props) {
           <img
             src="../picture-people.png"
             alt="people"
-            className={styles["picture"]}
+            className={styles["picture2"]}
           />
         </div>
       </div>

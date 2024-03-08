@@ -1,10 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./SignUpPage.module.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
 import authService from "./../services/auth.service";
 
-const API_URL = "http://localhost:5005";
 
 function SignUpPage() {
   const navigate = useNavigate();
@@ -13,6 +11,12 @@ function SignUpPage() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -46,7 +50,7 @@ function SignUpPage() {
         />
         <div className={styles["content"]}>
           <h1 className={styles["header"]}>Almost done! Just one thing...</h1>
-          <p>Please create an account to save your results:</p>
+          <p className={styles["sign-up-paragraph"]}>Please create an account to save your results:</p>
           <form onSubmit={handleSignupSubmit} className={styles["goals"]}>
             <div className={styles["left"]}>
               <label htmlFor="name" className={styles["job-title"]}>

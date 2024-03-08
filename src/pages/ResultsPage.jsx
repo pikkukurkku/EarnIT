@@ -1,7 +1,13 @@
 import Footer from "../components/Footer";
 import NavbarLoggedIn from "../components/NavbarLoggedIn";
+import { useEffect } from "react";
 
 function ResultsPage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
   <NavbarLoggedIn/>;
