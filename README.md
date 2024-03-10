@@ -21,23 +21,27 @@ The main objectives were to create and deploy a full stack MERN web application 
 - [presentation slides](https://docs.google.com/presentation/d/1fxYdEj5uU77xB0_m8kZwqmGEoh9CMfHt1UYNWJ467VU/edit#slide=id.gc6f80d1ff_0_0)
 - [trello board](https://trello.com/b/GOJYpW1Q/earnit)
 - [backend](https://earnit-server.onrender.com)
+- [frontend](https://visionary-dieffenbachia-36ce76.netlify.app/)
+- [figma](https://www.figma.com/proto/XqeXQFTgXo21Mxj1DBWIVu/Pocket-Mentor?node-id=1164-857&scaling=scale-down&page-id=1164%3A830&starting-point-node-id=1164%3A857&show-proto-sidebar=1)
+- [mongoDB](https://cloud.mongodb.com/v2/65ddf4f87bf68b0d1ffdb5ee#/overview)
 
 ## Collaborators
 
 The main idea for the web app came from the data analytics team:
 
-- Olivia Ihuoma Ojinji-Kotschka
-- Flora Kwong
-- Olga Gnezdilova
+- [Olivia Ihuoma Ojinji-Kotschka](https://www.linkedin.com/in/olivia-ihuoma-ojinji-kotschka/)
+- [Flora Kwong](https://www.linkedin.com/in/kwongflora/)
+- [Olga Gnezdilova](https://www.linkedin.com/in/gnezdilova/)
+
 
 The UX/UI design was created by the UX/UI team:
 
-- Katya Egorova
-- Larissa Bürgelin
+- [Katya Egorova](https://www.linkedin.com/in/ekaterina-egorova-786bb41a4/)
+- [Larissa Bürgelin](https://www.linkedin.com/in/larissa-b%C3%BCrgelin/)
 
 Web development by:
 
-- Natalia Ogórek
+- [Natalia Ogórek](https://www.linkedin.com/in/natalia-og%C3%B3rek/)
 
 ## Features
 
@@ -60,7 +64,8 @@ Web development by:
 - Axios
 - Node.js and npm
 - Git and GitHub
-- Adaptable
+- Render
+- Netlify
 - React Router
 - JSX
 - Babel
@@ -72,8 +77,8 @@ Web development by:
 Backend deployed on Render -->
 [click here](https://earnit-server.onrender.com)
 
-Frontend deployed on GitHub Pages -->
-[click here](https://pikkukurkku.github.io/react_project/#/)
+Frontend deployed on Netlify -->
+[click here](https://visionary-dieffenbachia-36ce76.netlify.app/)
 
 ## Local Development
 
