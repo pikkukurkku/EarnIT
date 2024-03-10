@@ -1,0 +1,14 @@
+
+.screenshot {
+    width: 600px
+  }
+
+  .main-overview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    background-color: #FB8500;
+    margin: 25px 0;
+    padding-bottom: 30px;
+  }

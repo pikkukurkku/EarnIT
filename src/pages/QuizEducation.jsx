@@ -169,16 +169,13 @@ function QuizEducation(props) {
                 }}
               />
             </div>
-            <input
-              type="text"
-              id="change1"
-              name="change1"
-              value="Add more"
-              readOnly
-              // onClick={handleChangeAnswer}
-              className={styles["add-more"]}
-              style={{ backgroundColor: "#8ECAE6" }}
-            />
+            <div
+  id="addMore"
+  className={styles["addMore"]}
+  style={{ backgroundColor: "#8ECAE6" }}
+>
+  Add more
+</div>
       
             <label className={styles["label-education"]}>Which courses have you completed?</label>
             <div className={styles["answer-pillars"]}>
@@ -215,16 +212,13 @@ function QuizEducation(props) {
                 }}
               />
             </div>
-            <input
-              type="text"
-              id="change2"
-              name="change2"
-              value="Add more"
-              readOnly
-              // onClick={handleChangeAnswer}
-              className={styles["add-more"]}
-              style={{ backgroundColor: "#8ECAE6" }}
-            />
+            <div
+  id="addMore"
+  className={styles["addMore"]}
+  style={{ backgroundColor: "#8ECAE6" }}
+>
+  Add more
+</div>
 
             <label className={styles["label-education"]}>Which languages do you speak?</label>
             <div className={styles["answer-pillars"]}>
@@ -275,16 +269,13 @@ function QuizEducation(props) {
               />
             </div>
 
-            <input
-              type="text"
-              id="change3"
-              name="change3"
-              value="Add more"
-              readOnly
-              // onClick={handleChangeAnswer}
-              className={styles["add-more"]}
-              style={{ backgroundColor: "#8ECAE6" }}
-            />
+            <div
+  id="addMore"
+  className={styles["addMore"]}
+  style={{ backgroundColor: "#8ECAE6" }}
+>
+  Add more
+</div>
           
 
             <label className={styles["label-education"]}>What are your soft skills?</label>
@@ -339,16 +330,13 @@ function QuizEducation(props) {
                 }}
               />
             </div>
-            <input
-              type="text"
-              id="change4"
-              name="change4"
-              value="Add more"
-              readOnly
-              // onClick={handleChangeAnswer}
-              className={styles["add-more"]}
-              style={{ backgroundColor: "#8ECAE6" }}
-            />
+            <div
+  id="addMore"
+  className={styles["addMore"]}
+  style={{ backgroundColor: "#8ECAE6" }}
+>
+  Add more
+</div>
 
             <label className={styles["label-education"]}>What are your hard skills?</label>
             <div className={styles["answer-pillars"]}>
@@ -413,16 +401,13 @@ function QuizEducation(props) {
                 }}
               />
             </div>
-            <input
-              type="text"
-              id="change5"
-              name="change5"
-              value="Add more"
-              readOnly
-              // onClick={handleChangeAnswer}
-              className={styles["add-more"]}
-              style={{ backgroundColor: "#8ECAE6" }}
-            />
+            <div
+  id="addMore"
+  className={styles["addMore"]}
+  style={{ backgroundColor: "#8ECAE6" }}
+>
+  Add more
+</div>
           </form>
         </div>
 

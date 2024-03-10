@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import NavbarLoggedIn from "../components/NavbarLoggedIn";
 import styles from "./Results.module.css";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function ResultsPage() {
   useEffect(() => {
@@ -18,9 +19,11 @@ function ResultsPage() {
       <div className={styles["WhyChooseUs"]}>
       <h1 className={styles["header-whyChooseUs"]}>Improve your current career:</h1>
       <div className={styles["boxes"]}>
+      <Link to="/results/user/overview1" className={styles["link-to-overview"]}>
         <div className={styles["box"]}>
           <h5 className={styles["whyh5"]}>Product Manager</h5>
         </div>
+        </Link>
       </div>
       <img src="../stars.png" alt="stars" className={styles["image-stars"]}/>
       <img src="../arrow.png" alt="arrow" className={styles["image-arrow"]}/>

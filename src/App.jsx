@@ -13,6 +13,10 @@ import LoadingPage from "./pages/LoadingPage";
 import ResultsPage from "./pages/ResultsPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import OverviewCareerDevelopment from "./pages/OverviewCareerDevelopment";
+import OverviewSalary from "./pages/OverviewSalary";
+import OverviewCountry from "./pages/OverviewCountry";
+import OverviewEducation from "./pages/OverviewEducation";
 
 function App() {
   return (
@@ -52,6 +56,38 @@ function App() {
           element={
             <IsPrivate>
               <ResultsPage />
+            </IsPrivate>
+          }
+        />
+        <Route
+          path="/results/user/overview1"
+          element={
+            <IsPrivate>
+              <OverviewCareerDevelopment />
+            </IsPrivate>
+          }
+        />
+           <Route
+          path="/overview2"
+          element={
+            <IsPrivate>
+              <OverviewSalary />
+            </IsPrivate>
+          }
+        />
+             <Route
+          path="/overview3"
+          element={
+            <IsPrivate>
+              <OverviewCountry />
+            </IsPrivate>
+          }
+        />
+            <Route
+          path="/overview4"
+          element={
+            <IsPrivate>
+              <OverviewEducation />
             </IsPrivate>
           }
         />

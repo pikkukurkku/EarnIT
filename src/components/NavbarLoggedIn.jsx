@@ -42,7 +42,7 @@ function Navbar() {
         <button onClick={deleteUser} className={styles["logout-btn"]}>Delete my profile</button>
         </div>
           <span className={styles["hey"]}>Hey, {user && user.name}!</span>
-        <img src="../Profile Icon.png" alt="profile icon" className={styles["profile-icon"]}  />
+        <img src="/Profile Icon.png" alt="profile icon" className={styles["profile-icon"]}  />
         </>
           ) : null}
     </nav>

@@ -64,7 +64,7 @@ function LogInPage(props) {
                   id="email"
                   value={email}
                   onChange={handleEmail}
-                  autoComplete="on"
+                  autoComplete="off"
                   className={styles["text-unit"]}
                 />
               </div>

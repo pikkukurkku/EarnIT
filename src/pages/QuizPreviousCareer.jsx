@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 
-// const API_URL = "http://localhost:5005";
+
 const API_URL = "https://earnit-server.onrender.com"
 
 
@@ -69,14 +69,13 @@ function QuizPreviousCareer(props) {
       />
       
       </div>
-       <input
-          type="text"
-          id="goal4"
-          name="goal4"
-          value="Add more"
-          readOnly
-          className={styles["addMore"]}
-          style={{ backgroundColor: "#8ECAE6" }}/>
+      <div
+  id="addMore"
+  className={styles["addMore"]}
+  style={{ backgroundColor: "#8ECAE6" }}
+>
+  Add more
+</div>
       </div>
       <div className={styles["right"]}>
           <label className={styles["work-period"]}>Work period</label><br/>
