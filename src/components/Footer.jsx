@@ -31,8 +31,8 @@ function Footer() {
         <div className={styles["get-connected"]}>
           <h4>Get Connected</h4>
           <div className={styles["get-connected-pics"]}>
-            <img src="./insta.png" className={styles["footer-img"]} />
-            <img src="./fb.png" className={styles["footer-img"]} />
+            <img src="../insta.png" className={styles["footer-img"]} />
+            <img src="../fb.png" className={styles["footer-img"]} />
           </div>
         </div>
       </div>
