@@ -13,6 +13,7 @@ function QuizDesires() {
   const [careerPathOptions, setCareerPathOptions] = useState([]);
   const [countries, setCountries] = useState([]);
   const [cities, setCities] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -53,6 +54,10 @@ function QuizDesires() {
   const handleSubmit = (e) => {
     console.log("Handling submit...");
     e.preventDefault();
+    if (!countries || countries.length === 0 || !cities || cities.length === 0) {
+      setErrorMessage("Please select both country and city");
+      return;
+    }
     const requestBody = { goals, careerPathOptions, countries, cities };
 
     axios
@@ -188,6 +193,8 @@ function QuizDesires() {
               <option value="switzerland">Switzerland</option>
               <option value="luxemburg">Luxemburg</option>
             </select>
+              {errorMessage && 
+              <p className={styles["error-message"]}>{errorMessage}</p>}
           </div>
           <div className={styles["cities"]}>
             <label>Which city would you like to work in?</label>
@@ -201,6 +208,8 @@ function QuizDesires() {
               <option value="vienna">Vienna</option>
               <option value="zurich">Zürich</option>
             </select>
+            {errorMessage && 
+              <p className={styles["error-message"]}>{errorMessage}</p>}
           </div>
         </form>
       </div>
@@ -211,7 +220,7 @@ function QuizDesires() {
           className={styles["picture"]}
         />
 
-        <button onClick={handleSubmit} className={styles["next-step"]}>
+        <button onClick={handleSubmit} className={styles["next-step"]} disabled={!cities ||!countries} >
           Next step
         </button>
       </div>
