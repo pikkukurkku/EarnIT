@@ -20,6 +20,7 @@ The main objectives were to create and deploy a full stack MERN web application 
 
 - [presentation slides](https://docs.google.com/presentation/d/1fxYdEj5uU77xB0_m8kZwqmGEoh9CMfHt1UYNWJ467VU/edit#slide=id.gc6f80d1ff_0_0)
 - [trello board](https://trello.com/b/GOJYpW1Q/earnit)
+- [backend](https://earnit-server.onrender.com)
 
 ## Collaborators
 
@@ -68,7 +69,10 @@ Web development by:
 
 ## Deployment
 
-Deployed on GitHub Pages -->
+Backend deployed on Render -->
+[click here](https://earnit-server.onrender.com)
+
+Frontend deployed on GitHub Pages -->
 [click here](https://pikkukurkku.github.io/react_project/#/)
 
 ## Local Development

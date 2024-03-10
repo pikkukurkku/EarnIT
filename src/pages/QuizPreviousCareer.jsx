@@ -5,7 +5,8 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
+const API_URL = "https://earnit-server.onrender.com"
 
 
 
