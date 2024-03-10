@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./QuizDesires.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
+const API_URL = "https://earnit-server.onrender.com"
 
 function QuizDesires() {
   const navigate = useNavigate();
@@ -12,6 +13,10 @@ function QuizDesires() {
   const [careerPathOptions, setCareerPathOptions] = useState([]);
   const [countries, setCountries] = useState([]);
   const [cities, setCities] = useState([]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleGoalChange = (e) => {
     const goal = e.target.value;
@@ -54,12 +59,11 @@ function QuizDesires() {
       .post(`${API_URL}/api/quizinput`, requestBody)
       .then((response) => {
         console.log("Response from backend =>", response);
-        const quizinputId = response.data._id; 
+        const quizinputId = response.data._id;
         navigate(`/quiz2/${quizinputId}`);
       })
       .catch((error) => {
         console.log(error);
-  
       });
   };
 
@@ -67,9 +71,9 @@ function QuizDesires() {
     <div className={styles["quiz-desires"]}>
       <div className={styles["content"]}>
         <Link to="/">
-          <button className={styles["back-button"]}>Back</button>
+          <button className={styles["back-button"]}>Back to homepage</button>
         </Link>
-        <h1 className={styles["header"]}>Desires</h1>
+        <h1 className={styles["header"]}>Career goals</h1>
 
         <form onSubmit={handleSubmit} className={styles["goals"]}>
           <label>What are your long-term goals? (pick 3)</label>
@@ -124,15 +128,7 @@ function QuizDesires() {
               }}
             />
           </div>
-          <input
-            type="text"
-            id="goal4"
-            name="goal4"
-            value="Change answer"
-            readOnly
-            className={styles["changeAnswer"]}
-            style={{ backgroundColor: "#8ECAE6" }}
-          />
+
           <label>
             Where do you see yourself in your career path? (you can choose both
             options)
@@ -146,7 +142,7 @@ function QuizDesires() {
               readOnly
               onClick={handleCareerChange}
               onChange={() => {}}
-              className={styles["answer"]}
+              className={styles["answer2"]}
               style={{
                 backgroundColor: careerPathOptions.includes(
                   "I am very happy in my field of work"
@@ -168,7 +164,7 @@ function QuizDesires() {
               defaultValue="I could see myself in a different job field"
               onClick={handleCareerChange}
               onChange={() => {}}
-              className={styles["answer"]}
+              className={styles["answer2"]}
               style={{
                 backgroundColor: careerPathOptions.includes(
                   "I could see myself in a different job field"
@@ -184,18 +180,19 @@ function QuizDesires() {
             />
           </div>
           <div className={styles["countries"]}>
-            <label>In which countries would you like to work?</label>
+            <label>Which country would you like to work in?</label>
             <select name="country" id="country" onChange={handleCountryChange}>
+              <option value="none"></option>
               <option value="germany">Germany</option>
               <option value="austria">Austria</option>
               <option value="switzerland">Switzerland</option>
               <option value="luxemburg">Luxemburg</option>
             </select>
-            <button className={styles["add-more"]}>Add more</button>
           </div>
           <div className={styles["cities"]}>
-            <label>In which cities would you like to work?</label>
+            <label>Which city would you like to work in?</label>
             <select name="city" id="city" onChange={handleCityChange}>
+              <option value="None"></option>
               <option value="No preferences">No preferences</option>
               <option value="berlin">Berlin</option>
               <option value="frankfurt">Frankfurt</option>
@@ -204,7 +201,6 @@ function QuizDesires() {
               <option value="vienna">Vienna</option>
               <option value="zurich">Zürich</option>
             </select>
-            <button className={styles["add-more"]}>Add more</button>
           </div>
         </form>
       </div>
@@ -218,7 +214,6 @@ function QuizDesires() {
         <button onClick={handleSubmit} className={styles["next-step"]}>
           Next step
         </button>
-  
       </div>
     </div>
   );

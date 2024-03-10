@@ -5,7 +5,7 @@ import axios from "axios";
 class AuthService {
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.SERVER_URL || "http://localhost:5005",
+      baseURL: import.meta.env.SERVER_URL || "https://earnit-server.onrender.com",
     });
 
     this.api.interceptors.request.use((config) => {
@@ -28,9 +28,12 @@ class AuthService {
     return this.api.post("/auth/login", requestBody);
   };
 
-
   verify = () => {
     return this.api.get("/auth/verify");
+  };
+
+  deleteUser = () => {
+    return this.api.delete("auth/user");
   };
 }
 

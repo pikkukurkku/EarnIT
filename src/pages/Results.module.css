@@ -1,0 +1,132 @@
+.WhyChooseUs {
+    background-color: #8ecae6;
+    font-family: Poppins;
+    font-weight: 700;
+    color: #023047;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 0;
+    margin-bottom: 30px;
+  }
+  
+.ready {
+
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 33px;
+    color: #023047;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.wewillhelp {
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 55px;
+  }
+
+  .your-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #fdfbf1;
+  }
+
+  .boxes {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    gap: 38px;
+    margin: 30px 100px 50px
+  }
+  
+  .box {
+    background-color: white;
+    border: 2px solid #023047;
+    border-radius: 20px;
+    line-height: 28px;
+    color: #023047;
+    align-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px 30px;
+    max-width: 250px
+  }
+  
+  .whyh5 {
+    font-size: 22px;
+    font-weight: bold;
+    padding: 5px
+  }
+  
+  .header-whyChooseUs {
+    font-family: Poppins;
+    font-size: 28px;
+    padding: 0;
+    margin-bottom: 3px;
+  }
+
+  .image-stars {
+    width: 110px;
+    position: absolute;
+    right: 270px;
+    top: 305px
+  }
+
+  .image-arrow {
+    width: 180px;
+    position: absolute;
+    left: 240px;
+    top: 550px
+  }
+
+
+  .WhatDoClientsSay {
+    background-color: #fcbf49;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-family: Poppins;
+    font-weight: 700;
+    color: #023047;
+    padding-top: 26px;
+    margin-bottom: 40px;
+  }
+  
+
+  
+  .what5 {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0;
+    margin-bottom: 3px;
+  }
+  
+  .what-article {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 40px 25px;
+
+  }
+  
+  .what-whyChooseUs {
+    font-family: Poppins;
+    font-size: 20px;
+    padding: 0;
+    margin: 10px 0;
+    font-weight: 300;
+  }
+  

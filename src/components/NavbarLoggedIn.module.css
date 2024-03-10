@@ -8,8 +8,7 @@
   font-size: 18px;
   font-family: Poppins;
   font-weight: 400;
-  padding: 51px 690px 44px 72px;
-  width: 90%
+  padding: 50px 0 9px 60px;
 }
 
 .logo {
@@ -24,29 +23,52 @@
   margin-right: 56px;
   color: #023047;
   font-size: 20px;
-    font-weight: 700;
-    font-family: Poppins;
-    color: #023047;
+  font-weight: 700;
+  font-family: Poppins;
+  color: #023047;
 }
 
 .navbar p {
   font-size: 16px;
-    font-weight: 400;
-    font-family: Poppins;
-    color: #023047;
-    padding: 0 30px;
+  font-weight: 400;
+  font-family: Poppins;
+  color: #023047;
+  padding: 0 30px;
 }
 
 .navbar-main {
   display: flex;
   flex-direction: row;
   align-items: center;
-
 }
 
 .profile-icon {
-  display: flex;
-  align-content: center;
-  justify-content: center;
+  width: 40px;
+  margin: 0;
+  padding-right: 60px;
   align-self: center;
+}
+
+.logout-btn {
+  font-family: Poppins;
+  border-radius: 20px;
+  border: none;
+  background-color: #023047;
+  color: white;
+  font-weight: 500;
+  width: auto;
+  margin-left: 110px;
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
+.hey {
+  margin-left: 60px;
+}
+
+
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 5px
 }

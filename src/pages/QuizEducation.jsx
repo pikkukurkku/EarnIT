@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./QuizEducation.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
+const API_URL = "https://earnit-server.onrender.com"
 
 function QuizEducation(props) {
   const navigate = useNavigate();
@@ -16,6 +17,11 @@ function QuizEducation(props) {
   const [languages, setLanguages] = useState([]);
   const [softSkills, setSoftSkills] = useState([]);
   const [hardSkills, setHardSkills] = useState([]);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
     const handleDegreeChange = (e) => {
@@ -68,8 +74,8 @@ function QuizEducation(props) {
   };
 
   const handleSubmit = (e) => {
-    console.log("Handling submit...");
     e.preventDefault();
+    console.log("Handling submit...");
     const updatedData = {
       degree,
       subjects,
@@ -94,7 +100,7 @@ function QuizEducation(props) {
   return (
     <div className={styles["quiz-desires"]}>
       <Link to="/">
-        <button className={styles["back-button"]}>Back</button>
+        <button className={styles["back-button"]}>Back to Homepage</button>
       </Link>
 
       <div className={styles["main-content"]}>
@@ -102,13 +108,14 @@ function QuizEducation(props) {
           <h1 className={styles["header"]}>Education</h1>
 
           <form onSubmit={handleSubmit} className={styles["goals"]}>
-            <label>What is the highest degree you have?</label>
+            <label className={styles["label-education"]}>What is the highest degree you have?</label>
             <select onChange={handleDegreeChange} name="country" id="country">
+            <option value="none"></option>
               <option value="master">Master's Degree</option>
               <option value="bachelor">Bachelor's Degree</option>
               <option value="doctorate">Doctorate</option>
             </select>
-            <label>
+            <label className={styles["label-education"]}>
               Which subjects have you studied? (You can choose several options)
             </label>
             <div className={styles["answer-pillars"]}>
@@ -173,7 +180,7 @@ function QuizEducation(props) {
               style={{ backgroundColor: "#8ECAE6" }}
             />
       
-            <label>Which courses have you completed?</label>
+            <label className={styles["label-education"]}>Which courses have you completed?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -219,7 +226,7 @@ function QuizEducation(props) {
               style={{ backgroundColor: "#8ECAE6" }}
             />
 
-            <label>Which languages do you speak?</label>
+            <label className={styles["label-education"]}>Which languages do you speak?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -280,7 +287,7 @@ function QuizEducation(props) {
             />
           
 
-            <label>What are your soft skills?</label>
+            <label className={styles["label-education"]}>What are your soft skills?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -343,7 +350,7 @@ function QuizEducation(props) {
               style={{ backgroundColor: "#8ECAE6" }}
             />
 
-            <label>What are your hard skills?</label>
+            <label className={styles["label-education"]}>What are your hard skills?</label>
             <div className={styles["answer-pillars"]}>
               <input
                 type="text"
@@ -423,13 +430,13 @@ function QuizEducation(props) {
           <img
             src="../picture-people.png"
             alt="people"
-            className={styles["picture"]}
+            className={styles["picture2"]}
           />
         </div>
       </div>
 
       <div className={styles["bottom-div"]}>
-        <Link to= {`/quiz3/${quizinputId}`}>
+        <Link to= {`/quiz3/${quizinputId}`} className={styles["link"]}>
           <button className={styles["step"]}>Previous step</button>
         </Link>
           <button onClick={handleSubmit} className={styles["step"]}>

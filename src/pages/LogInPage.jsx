@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./LogInPage.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import { useContext } from "react";
 import authService from "./../services/auth.service";
 
-const API_URL = "http://localhost:5005";
 
 function LogInPage(props) {
   const [email, setEmail] = useState("");
@@ -16,6 +14,12 @@ function LogInPage(props) {
   const navigate = useNavigate();
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -42,10 +46,10 @@ function LogInPage(props) {
   return (
     <div className={styles["quiz-desires"]}>
       <Link to="/">
-        <button className={styles["back-button"]}>Back</button>
+        <button className={styles["back-button"]}>Back to Homepage</button>
       </Link>
       <div className={styles["main-content"]}>
-        <img src="../stars.png" alt="happy woman" />
+        <img src="../stars.png" alt="stars" className={styles["picture"]}/>
         <div className={styles["content"]}>
           <h1 className={styles["header"]}>Log in to your profile</h1>
           <form onSubmit={handleLogInSubmit} className={styles["goals"]}>
@@ -60,7 +64,7 @@ function LogInPage(props) {
                   id="email"
                   value={email}
                   onChange={handleEmail}
-                  autoComplete="off"
+                  autoComplete="on"
                   className={styles["text-unit"]}
                 />
               </div>
@@ -79,11 +83,12 @@ function LogInPage(props) {
                 />
               </div>
               <button type="submit" className={styles["step"]}>
-                Login
+                Log in
               </button>
             </div>
           </form>
-          {errorMessage && <p className="error-message">{errorMessage}</p>}
+          {errorMessage && (
+          <div className={styles["error-message"]}>{errorMessage}</div> )}
         </div>
       </div>
     </div>

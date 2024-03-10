@@ -48,7 +48,7 @@ function App() {
           }
         />
         <Route
-          path="/results"
+          path="/results/user"
           element={
             <IsPrivate>
               <ResultsPage />
