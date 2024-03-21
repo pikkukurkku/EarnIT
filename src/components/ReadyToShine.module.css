@@ -59,13 +59,13 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px 0 80px; /* Adjusted padding for mobile */
+      padding: 50px 0 50px; 
   }
   
   .ReadyToShineHeader {
       color: #023047;
       font-family: Poppins;
-      font-size: 24px; /* Decreased font size for mobile */
+      font-size: 24px; 
       margin-bottom: 0;
   }
   
@@ -74,29 +74,35 @@
       border-radius: 20px;
       border: none;
       background-color: #023047;
-      padding: 12px 22px;
+      padding: 10px 10px;
       color: white;
-      width: 200px;
+      width: 160px;
       height: 47px;
-      font-size: 18px; 
+      font-size: 16px; 
       margin: 10px 0; 
       font-weight: bold;
   }
   
   .star-img {
-      width: 20%;
+      width: 18%;
       padding: 0;
       margin: 10px 0;
   }
   
   .take-the-quiz {
       display: flex;
-      flex-direction: column; 
+      flex-direction: row; 
       align-items: center; 
+      margin: 20px;
   }
   
   .link-to-quiz1 {
       margin-top: 20px; 
   }
   
+  .next-big-step {
+    font-size: 16px;
+    margin: 20px 15px;
+    text-align: center;
+  }
 }
