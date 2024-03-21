@@ -73,3 +73,13 @@
   align-items: center;
   padding: 0 15px
 }
+
+
+@media only screen and (max-width: 600px) {
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+}

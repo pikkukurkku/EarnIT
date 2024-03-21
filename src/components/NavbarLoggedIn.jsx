@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import authService from "./../services/auth.service";
 
-function Navbar() {
+function NavbarLoggedIn() {
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
  
   const navigate = useNavigate();
@@ -49,4 +49,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarLoggedIn;
