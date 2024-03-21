@@ -72,3 +72,26 @@
   flex-direction: column;
   gap: 5px
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    padding: 20px;
+  }
+
+ .paragraph {
+  display: none;
+ }
+
+
+  .profile-icon {
+    width: 25px; 
+    margin-right: 10px;
+
+  }
+
+  .logout-btn {
+    width: 80px;
+    margin-right: 20px; 
+  }
+
+}

@@ -45,3 +45,61 @@
   display: flex;
   flex-direction: row;
 }
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    background-color: #023047;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .footer h4 {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center; 
+  }
+  
+  .footer p {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center; 
+  }
+  
+  .footer-boxes {
+    display: flex;
+    flex-direction: column; 
+    padding: 35px 0 50px; 
+    justify-content: center; 
+    align-items: center; 
+    line-height: 1.8;
+  }
+  
+  .footer-img {
+    width: 38px;
+    margin: 0;
+    padding: 15px;
+  }
+  
+  .footer span {
+    font-size: 11px;
+    align-self: center;
+    margin-bottom: 25px;
+  }
+  
+  .get-connected-pics {
+    display: flex;
+    flex-direction: row;
+  }
+  
+ span {
+  text-align: center;
+ }
+
+}
