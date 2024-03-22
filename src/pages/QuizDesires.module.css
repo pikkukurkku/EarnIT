@@ -170,3 +170,91 @@ select {
   color: red;
   font-weight: bold;
 }
+
+@media only screen and (max-width: 600px) {
+  .quiz-desires {
+    margin: 20px; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .label {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .content {
+    margin-bottom: 20px; 
+ padding: 0 30px;
+ 
+  }
+  
+  .picture {
+    width: 100%; 
+    position: static; 
+    margin-top: 20px; 
+    right: auto;
+    top: auto;
+  }
+  
+  .answer-pillars,
+  .answer-pillars2 {
+    flex-direction: column;
+    width: auto;
+    align-self: center;
+    margin-bottom: 55px;
+  }
+
+  .answer,
+  .answer2 {
+    width: auto; 
+    max-width: 100px; 
+    margin-bottom: 10px; 
+    gap: 0px;
+    padding: 5px 3px;
+  }
+
+  .back-button {
+    margin-bottom: 30px; 
+  }
+
+ .select {
+  align-self: center;
+ }
+
+
+  .next-step {
+    position: static; 
+    margin: 20px 0; 
+    align-self: center;
+    padding: 4px 25px;
+    width: auto
+    }
+
+  .countries > select,
+  .cities > select {
+    width: 100%; 
+    max-width: 200px; 
+    margin-top: 10px; 
+  }
+
+  .error-message {
+    margin-top: 10px; 
+  }
+
+  .picture {
+    order: -2; 
+    width: 100%; 
+    margin: 20px 0; 
+  }
+
+.answer {
+  margin: 0;
+}
+
+}

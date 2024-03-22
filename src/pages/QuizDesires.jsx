@@ -81,7 +81,7 @@ function QuizDesires() {
         <h1 className={styles["header"]}>Career goals</h1>
 
         <form onSubmit={handleSubmit} className={styles["goals"]}>
-          <label>What are your long-term goals? (pick 3)</label>
+          <label className={styles["label"]}>What are your long-term goals? (you can pick up to 3)</label>
           <div className={styles["answer-pillars"]}>
             <input
               type="text"
@@ -134,7 +134,7 @@ function QuizDesires() {
             />
           </div>
 
-          <label>
+          <label className={styles["label"]}>
             Where do you see yourself in your career path? (you can choose both
             options)
           </label>
@@ -185,8 +185,8 @@ function QuizDesires() {
             />
           </div>
           <div className={styles["countries"]}>
-            <label>Which country would you like to work in?</label>
-            <select name="country" id="country" onChange={handleCountryChange}>
+            <label className={styles["label"]}>Which country would you like to work in?</label>
+            <select className={styles["select"]} name="country" id="country" onChange={handleCountryChange}>
               <option value="none"></option>
               <option value="germany">Germany</option>
               <option value="austria">Austria</option>
@@ -197,8 +197,8 @@ function QuizDesires() {
               <p className={styles["error-message"]}>{errorMessage}</p>}
           </div>
           <div className={styles["cities"]}>
-            <label>Which city would you like to work in?</label>
-            <select name="city" id="city" onChange={handleCityChange}>
+            <label className={styles["label"]}>Which city would you like to work in?</label>
+            <select className={styles["select"]} name="city" id="city" onChange={handleCityChange}>
               <option value="None"></option>
               <option value="No preferences">No preferences</option>
               <option value="berlin">Berlin</option>
