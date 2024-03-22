@@ -171,7 +171,6 @@ select {
   font-weight: bold;
 }
 
-
 @media only screen and (max-width: 600px) {
   .quiz-desires {
     margin: 20px; 
@@ -182,6 +181,11 @@ select {
     align-content: center;
     justify-content: center;
     text-align: center;
+  }
+
+  .label {
+    font-size: 16px;
+    margin-bottom: 15px;
   }
   
   .content {
@@ -252,8 +256,5 @@ select {
 .answer {
   margin: 0;
 }
-.label {
-  font-size: 16px;
-  margin-bottom: 15px;
-}
+
 }
