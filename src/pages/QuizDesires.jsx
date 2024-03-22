@@ -81,7 +81,7 @@ function QuizDesires() {
         <h1 className={styles["header"]}>Career goals</h1>
 
         <form onSubmit={handleSubmit} className={styles["goals"]}>
-          <label>What are your long-term goals? (you can pick up to 3)</label>
+          <label className={styles["label"]}>What are your long-term goals? (you can pick up to 3)</label>
           <div className={styles["answer-pillars"]}>
             <input
               type="text"
