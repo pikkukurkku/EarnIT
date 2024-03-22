@@ -236,20 +236,20 @@ span {
 
   .label {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin: 15px 0;
+    align-self: center;
   }
   
   .main-content {
-
 display: flex;
 flex-direction: column;
 align-content: center;
 margin: 0;
 padding: 0;
 position: static;
-  }
 
   }
+
 
   .right-side {
     flex: 1;
@@ -261,11 +261,11 @@ position: static;
   }
   
   .picture {
-    width: 90%;
+    width: 100%;
     height: auto;
 order: -1;
 position: static;
-    margin-top: 20px;
+    margin-top: 70px;
    align-self: center;
   }
   
@@ -274,16 +274,14 @@ position: static;
     flex-direction: column;
     width: auto;
     align-self: center;
-    margin-bottom: 55px;
+    margin-bottom: 5px;
+    gap: 20px
   }
 
-  .answer,
   .answer2 {
     width: auto; 
     max-width: 100px; 
-    margin-bottom: 10px; 
-    gap: 0px;
-    padding: 5px 3px;
+    margin-bottom: 2px; 
   }
 
   .back-button {
@@ -294,25 +292,28 @@ position: static;
   align-self: center;
  }
 
+ .radio-buttons {
+  align-self: center;
+ }
 
-  .next-step {
-    position: static; 
-    margin: 20px 0; 
-    align-self: center;
-    padding: 4px 25px;
-    width: auto
-    }
+ .header {
+  font-size: 24px;
+ }
 
-  .countries > select,
-  .cities > select {
-    width: 100%; 
-    max-width: 200px; 
-    margin-top: 10px; 
-  }
-
-
-
-.answer {
-  margin: 0;
+.bottom-div {
+  gap: 20px
 }
 
+ .step {
+  display: flex;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.custom-input {
+  align-self: center;
+  width: 300px;
+  padding: 0;
+}
+}

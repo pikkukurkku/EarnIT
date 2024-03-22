@@ -83,8 +83,8 @@ function QuizCurrentCareer(props) {
         <h1 className={styles["header"]}>Current Job Situation</h1>
 
         <form onSubmit={handleSubmit} className={styles["goals"]}>
-          <label>What is your current job title?</label>
-          <select name="currentJobTitle" id="currentJobTitle" onChange={handleCurrentJobTitleChange} >
+          <label className={styles["label"]}>What is your current job title?</label>
+          <select className={styles["label"]}name="currentJobTitle" id="currentJobTitle" onChange={handleCurrentJobTitleChange} >
             <option value="No preferences"></option>
             <option value="product">Product</option>
             <option value="product-manager">Product Manager</option>
@@ -92,7 +92,7 @@ function QuizCurrentCareer(props) {
             <option value="vp-of-product">VP of Product</option>
           </select>
 
-          <label>Do you work full-time or part-time?</label>
+          <label className={styles["label"]}>Do you work full-time or part-time?</label>
 
           <div className={styles["radio-buttons"]}>
             <div
@@ -110,7 +110,7 @@ function QuizCurrentCareer(props) {
             </div>
           </div>
 
-          <label>How long have you been working in this position?</label>
+          <label className={styles["label"]}>How long have you been working in this position?</label>
           <div className={styles["custom-input"]}>
           <select name="years" id="years" onChange={handleYearsChange} className={styles["select"]} >
             <option value="0"></option>
@@ -125,7 +125,7 @@ function QuizCurrentCareer(props) {
             <span className={styles["time-unit"]}>{years === "1" ? "year" : "years"}</span>
           </div>
 
-          <label>What is your current salary per year? (without extra bonuses)</label>
+          <label className={styles["label"]}>What is your current salary per year? (without extra bonuses)</label>
           <div className={styles["custom-input"]}>
           <input type="text" className={styles["text-unit"]}
         value={salary}
@@ -139,7 +139,7 @@ function QuizCurrentCareer(props) {
           </div>
           </div>
           
-        <label>Do you have any additional work responsibilities?</label>
+        <label className={styles["label"]}>Do you have any additional work responsibilities?</label>
         <div className={styles["answer-pillars"]}>
           <input
             type="text"
