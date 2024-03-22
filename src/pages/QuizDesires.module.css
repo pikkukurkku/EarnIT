@@ -248,7 +248,7 @@ select {
   }
 
   .picture {
-    order: -2; 
+    order: -1; 
     width: 100%; 
     margin: 20px 0; 
   }
