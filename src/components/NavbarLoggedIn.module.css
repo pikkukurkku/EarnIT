@@ -83,15 +83,52 @@
  }
 
 
-  .profile-icon {
-    width: 25px; 
-    margin-right: 10px;
-
-  }
 
   .logout-btn {
     width: 80px;
     margin-right: 20px; 
   }
 
+  @media only screen and (max-width: 600px) {
+    .navbar {
+      flex-direction: row;
+      padding: 5px;
+    }
+  
+    .logo {
+      margin: 0;
+      padding-right: 10px;
+    }
+  
+    .navbar p {
+      display: none; 
+    }
+  
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-left: 0; 
+    }
+
+    .logout-btn {
+      width: 120px;
+      margin: 0 5px 0 0;
+      font-size: 12px;
+      padding: 5px;
+    }
+    .navbar span {
+      font-size: 16px;
+      margin: 0;
+  padding: 0;
+    }
+    
+
+
+  .profile-icon {
+    margin: 0;
+    padding-right: 0;
+    align-self: center;
+  }
+  }
 }
