@@ -21,7 +21,7 @@ function LoadingPage() {
           <button className={styles["back-button"]}>Back to Homepage</button>
         </Link>
     <div className={styles["main"]}>
-      <h1>Your results are almost there!</h1>
+      <h1 className={styles["header"]}>Your results are almost there!</h1>
       <p>We are preparing your results right now...</p>
       
       <img className={styles["results-loading-image"]} src="../loading_bulbs.gif" />
