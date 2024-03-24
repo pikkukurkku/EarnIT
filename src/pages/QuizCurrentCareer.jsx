@@ -121,12 +121,11 @@ function QuizCurrentCareer(props) {
             <option value="5">>5</option>
             <option value="6">>10</option>
           </select>
-            <div className={styles["separator"]} />
             <span className={styles["time-unit"]}>{years === "1" ? "year" : "years"}</span>
           </div>
 
           <label className={styles["label"]}>What is your current salary per year? (without extra bonuses)</label>
-          <div className={styles["custom-input"]}>
+          <div className={styles["custom-input2"]}>
           <input type="text" className={styles["text-unit"]}
         value={salary}
         onChange={handleSalaryChange}
