@@ -146,3 +146,70 @@ img {
 .right {
   margin-left: 100px;
 }
+
+@media only screen and (max-width: 600px) {
+
+  .quiz-desires {
+    margin: 20px; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .bottom-div {
+    gap: 20px;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    position: static;
+      }
+
+      .goals {
+        display: flex;
+        flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      }
+
+      .addMore {
+        align-self: center;
+        margin-bottom: 45px;
+      }
+
+.right {
+  margin: 20px 0 0 0;
+  padding: 0;
+
+}
+
+      .fromAndTo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0;
+      
+      }
+
+      .work-period{
+        margin-bottom: 0
+      }
+
+  .step {
+    display: flex;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+
+  .back-button {
+    margin-bottom: 30px; 
+  }
+}

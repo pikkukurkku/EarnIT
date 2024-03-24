@@ -156,3 +156,80 @@ align-items: center;
     top: 420px;
     right: 20px
     }
+
+    @media only screen and (max-width: 600px) {
+      .quiz-desires {
+        margin: 20px; 
+        padding: 20px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .main-content {
+     
+        margin: 0;
+        padding: 0;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        
+          }
+
+
+          .picture2 {
+            width: 100%;
+            height: auto;
+        order: -1;
+        position: static;
+            margin-top: 50px;
+           align-self: center;
+          }
+
+          .bottom-div {
+            gap: 20px
+          }
+          
+           .step {
+            display: flex;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 16px;
+          }
+
+          .goals {
+            display: flex;
+            flex-direction: column;
+          }
+      
+     
+            .answer-pillars,
+            .answer-pillars2 {
+              flex-direction: column;
+              width: auto;
+              align-self: center;
+              margin-bottom: 5px;
+              gap: 20px
+            }
+          
+            .answer2 {
+              width: auto; 
+              max-width: 100px; 
+              margin-bottom: 2px; 
+            }     
+
+            select {
+              align-self: center;
+            }
+
+            .addMore {
+              align-self: center;
+              margin-bottom: 45px;
+            }
+
+            .label-education {
+              text-align: center;
+align-self: center;
+}
+    }
