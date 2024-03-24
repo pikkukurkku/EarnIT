@@ -133,3 +133,42 @@
   .link-to-overview {
 text-decoration: none;
   }
+
+
+  @media only screen and (max-width: 600px) {
+.ready {
+  font-size: 22px;
+  padding-top: 70px;
+}
+.wewillhelp {
+  font-size: 18px;
+  text-align: center;
+  padding: 5px
+}
+
+.WhyChooseUs {}
+
+.header-whyChooseUs {
+  font-size: 22px;
+  padding-bottom:30px;
+}
+
+.what5 {
+  font-size: 22px;
+  text-align: center;
+  padding: 0 20px 10px;
+}
+
+.image-stars {
+  display: none;
+}
+
+.image-arrow {
+  display: none;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: column;
+}
+  }

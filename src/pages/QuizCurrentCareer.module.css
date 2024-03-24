@@ -329,7 +329,11 @@ position: static;
 }
 
 .text-unit {
-  padding: 2px 14px;
+  padding: 2px 4px;
+}
+
+.time-unit {
+  margin-right: 0;
 }
 
 .custom-input2 {

@@ -30,10 +30,10 @@ function NavbarLoggedIn() {
         <span>EarnIT</span>
       </Link>
 
-        <p>Graph</p>
-        <p>Guides</p>
-        <p>Networking</p>
-        <p>Events</p>
+        <p className={styles["paragraph"]}>Graph</p>
+        <p className={styles["paragraph"]}>Guides</p>
+        <p className={styles["paragraph"]}>Networking</p>
+        <p className={styles["paragraph"]}>Events</p>
 
         {isLoggedIn ? (
   <>
@@ -42,7 +42,9 @@ function NavbarLoggedIn() {
         <button onClick={deleteUser} className={styles["logout-btn"]}>Delete my profile</button>
         </div>
           <span className={styles["hey"]}>Hey, {user && user.name}!</span>
+          <Link className={styles["link"]} to="/results/user">
         <img src="/Profile Icon.png" alt="profile icon" className={styles["profile-icon"]}  />
+        </Link>
         </>
           ) : null}
     </nav>

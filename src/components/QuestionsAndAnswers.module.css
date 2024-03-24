@@ -10,7 +10,7 @@
 .questions {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   border: 1px solid #023047;
   border-radius: 25px;
   width: 83%;
@@ -59,7 +59,7 @@
   .questions {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     border: 1px solid #023047;
     border-radius: 25px;
     width: calc(100% - 70px);
