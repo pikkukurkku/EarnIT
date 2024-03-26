@@ -113,9 +113,13 @@
 
     .logout-btn {
       width: 120px;
-      margin: 0 5px 0 0;
-      font-size: 12px;
-      padding: 5px;
+      margin: 0;
+      font-size: 11px;
+      padding: 0;
+      color: #023047;
+      font-weight: 700;
+      background-color: #8ecae6;
+      text-align: center;
     }
     .navbar span {
       font-size: 16px;
