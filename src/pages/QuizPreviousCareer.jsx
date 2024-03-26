@@ -78,7 +78,7 @@ function QuizPreviousCareer(props) {
 </div>
       </div>
       <div className={styles["right"]}>
-          <label className={styles["work-period"]}>Work period</label><br/>
+          <label className={styles["work-period"]}>Work period</label>
           <div className={styles["fromAndTo"]}>
           <span className={styles["from"]}>From:</span>
           <div className={styles["custom-input"]}>
