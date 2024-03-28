@@ -83,7 +83,7 @@
     background-color: white;
     border: 1px solid black;
     border-radius: 25px;
-    line-height: 28px;
+    line-height: 22px;
     color: #023047;
     text-align: center;
     box-sizing: border-box;
@@ -91,21 +91,21 @@
   }
   
   .whyh5 {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     padding: 5px;
-    margin: 15px
+    margin: 10px
   }
   
   .why-article {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
-    padding: 0 20px 25px; 
+    padding: 0 15px 15px; 
   }
   
   .header-whyChooseUs {
     font-family: Poppins;
-    font-size: 22px;
+    font-size: 20px;
     padding: 0;
     margin-bottom: 3px; 
   }
@@ -121,5 +121,11 @@
 
   .boxes {
     margin: 30px 10px; 
+  }
+}
+
+@media only screen and (min-width:600px) and (max-width: 992px) {
+  .boxes {
+    flex-direction: column;
   }
 }

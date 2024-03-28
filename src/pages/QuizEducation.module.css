@@ -5,7 +5,6 @@
   border: 3px solid var(--Dark-Blue, #023047);
   background: #fff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  flex-shrink: 0;
   margin: 40px;
   padding: 50px;
   position: relative;
@@ -157,35 +156,34 @@ align-items: center;
     right: 20px
     }
 
-    @media only screen and (max-width: 600px) {
-      .quiz-desires {
-        margin: 20px; 
-        padding: 20px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-      }
-      .main-content {
-     
-        margin: 0;
-        padding: 0;
-        position: static;
-        display: flex;
-        flex-direction: column;
-        
-          }
+ @media only screen and (max-width: 600px) {
+   .quiz-desires {
+    margin: 20px; 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+     }
+
+    .main-content {
+    margin: 0;
+    padding: 0;
+    position: static;
+    display: flex;
+    flex-direction: column;
+ }
 
 
-          .picture2 {
-            width: 100%;
-            height: auto;
-        order: -1;
-        position: static;
-            margin-top: 50px;
-           align-self: center;
-          }
+ .picture2 {
+ width: 110%;
+ height: auto;
+order: -1;
+position: static;
+margin-top: 50px;
+align-self: center;
+ }
 
           .bottom-div {
             gap: 20px
@@ -203,7 +201,6 @@ align-items: center;
             flex-direction: column;
           }
       
-     
             .answer-pillars,
             .answer-pillars2 {
               flex-direction: column;
@@ -212,12 +209,17 @@ align-items: center;
               margin-bottom: 5px;
               gap: 20px
             }
+
+            .header {
+              font-size: 20px;
+            }
           
-            .answer2 {
+            .answer {
               width: auto; 
               max-width: 100px; 
               margin-bottom: 2px; 
-            }     
+              padding: 8px 16px;
+            }
 
             select {
               align-self: center;
@@ -226,10 +228,14 @@ align-items: center;
             .addMore {
               align-self: center;
               margin-bottom: 45px;
+              padding: 5px 14px;
+              font-size: 14px
             }
 
             .label-education {
               text-align: center;
 align-self: center;
+font-size: 15px;
 }
-    }
+
+}
