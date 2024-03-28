@@ -118,3 +118,36 @@
     margin: 10px
   }
 }
+
+  @media only screen and (min-width:600px) and (max-width: 992px) {
+    .headerDiv {
+      font-size: 18px; 
+      line-height: 24px; 
+      padding: 80px 55px 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: left;
+    }
+
+    .wewillhelp, .header {
+      width: inherit
+    }
+
+    .text {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: normal;
+    }
+
+    .earnIT {
+      display: flex;
+      align-self: center;
+      padding: 0;
+      margin-right: 30px;
+      width: 100%
+    }
+  }
+

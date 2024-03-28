@@ -103,3 +103,29 @@
  }
 
 }
+
+@media only screen and (min-width:600px) and (max-width: 992px) {
+  .footer-boxes {
+    display: flex;
+    flex-direction: row;
+    padding: 35px 30px 30px 40px;
+    justify-content: space-between;
+    line-height: 1.6;
+    gap: 60px
+  }
+
+  .footer h4 {
+    font-size: 15px;
+  }
+  
+  .footer p {
+    font-size: 12.5px;
+    font-weight: 300;
+  }
+
+  .footer-img {
+    width: 24px;
+    margin: 0;
+    padding: 10px;
+  }
+}

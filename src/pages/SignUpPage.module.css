@@ -133,9 +133,13 @@
     margin: 0;
     padding: 0;
     position: static;
-    
-      }
+  }
 
+  .job-title {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 
       .picture {
         width: 100%;
@@ -147,10 +151,12 @@
       }
 
       .header {
+        font-size: 20px;
         margin-bottom: 20px;
       }
 
       .sign-up-paragraph {
+        font-size: 16px;
         margin-bottom: 20px;
       }
 
@@ -158,6 +164,11 @@
         display: flex;
         flex-direction: column;
         margin-top: 25px;
+        font-size: 16px;
+      }
+
+      link {
+        font-size: 16px;
       }
 
       .content {
@@ -167,6 +178,7 @@
         .step {
           padding: 8px 16px;
           margin-top: 25px;
+          font-size: 16px;
         }     
 
         .left {
@@ -174,5 +186,10 @@
           flex-direction: column;
           align-items: center; 
           text-align: center; 
+        }
+
+        .error-message {
+          font-weight: 500;
+          font-size: 14px;
         }
 }
